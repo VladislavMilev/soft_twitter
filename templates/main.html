@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TWITTER</title>
+</head>
+<body>
+
+<h3>Messages</h3>
+
+<form action="/send_message" method="post">
+    <label for="name">Name</label><br>
+    <input type="text" name="name" required="true"><br>
+
+    <label for="text">Text</label><br>
+<!--    <input type="textarea" name="text" required="true"><br>-->
+
+    <textarea name="text"
+          rows="4" cols="30">
+    </textarea><br>
+
+    <label for="tag">Tag</label><br>
+    <input type="text" name="tag" required="true">
+
+    <button type="submit">Send message</button>
+</form>
+
+<h3>Twitts</h3>
+
+{% for message in messages %}
+<!--<div>{{ message.text }}&nbsp;<b>#{{message.tag}}</b></div>-->
+
+<table>
+    <caption>{{ message.name }} twitted:</caption>
+    <tr>
+        <td>{{ message.text }}</td>
+        <td><b>#{{ message.tag }}</b></td>
+    </tr>
+</table>
+
+{% endfor %}
+
+</body>
+</html>
