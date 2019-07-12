@@ -15,7 +15,7 @@ def hello_world():
 
 @app.route('/main', methods=['GET'])
 def main():
-    return render_template('main.html', messages=messages)
+    return render_template('dir/main.html', messages=messages)
 
 
 @app.route('/send_message', methods=['POST'])
