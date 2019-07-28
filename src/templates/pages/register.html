@@ -1,0 +1,48 @@
+{% extends "pages/base.html" %}
+
+{% block head %}
+    <title>Register</title>
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="container" style="width: 40%; margin-top: 7%">
+        {% if name %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{ name }}</strong> You should check in on some of those fields below.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+
+        <h3>Регистрация</h3>
+        <form action="/check_register" method="post">
+            <div class="form-group">
+                <label for="name">Имя</label>
+                <input type="text" name="name" class="form-control" placeholder="Имя">
+                {#    <small id="emailHelp" class="form-text text-muted"></small>#}
+
+                <label for="login">Логин</label>
+                <input type="text" name="login" class="form-control" placeholder="Введите Логин">
+                {#    <small class="form-text text-muted">We'll never share your email with anyone else.</small>#}
+            </div>
+            <div class="form-group">
+                <label for="password_1">Пароль</label>
+                <input type="password" name="password_1" class="form-control" placeholder="Введите пароль">
+            </div>
+            <div class="form-group">
+                <label for="password_2">Повторите пароль</label>
+                <input type="password" name="password_2" class="form-control" placeholder="Введите пароль">
+
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" required="true" class="form-check-input">
+                <label class="form-check-label" for="exampleCheck1">Ты не пройдёшь</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Регистрация</button>
+        </form>
+
+    </div>
+{% endblock %}
