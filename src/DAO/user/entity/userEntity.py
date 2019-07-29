@@ -8,9 +8,14 @@ class User(BASE):
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
     name = Column(String(40), nullable=False)
-    # login = Column(String(40), unique=True, nullable=False)
-    # password = Column(String(40), nullable=False)
-    # role = Column(String(10), nullable=False, default='user')
+    login = Column(String(40), unique=True, nullable=False)
+    password = Column(String(40), nullable=False)
+    role = Column(String(10), nullable=False, default='user')
+
+    def __init__(self, name, login, password):
+        self.name = name
+        self.login = login
+        self.password = password
 
 
 class Message(BASE):
