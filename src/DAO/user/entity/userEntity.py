@@ -25,15 +25,16 @@ class Message(BASE):
     text = Column(Text(1024), nullable=False)
     time = Column(DateTime, default=datetime.utcnow)
 
-    user_id = Column(Integer, ForeignKey('user.id'), default=1, nullable=False)
+    user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
     user = relationship('User', backref=backref('message', lazy=True))
 
-    def __init__(self, title, text, tags):
+    def __init__(self, title, text, tags, user_id):
         self.title = title.strip()
         self.text = text.strip()
         self.tags = [
             Tag(text=tag.strip()) for tag in tags.split(',')
         ]
+        self.user_id = user_id
 
 
 class Tag(BASE):
@@ -46,4 +47,4 @@ class Tag(BASE):
     message = relationship('Message', backref=backref('tags', lazy=True))
 
 
-# BASE.metadata.create_all(ENGINE)
+BASE.metadata.create_all(ENGINE)

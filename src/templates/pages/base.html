@@ -11,6 +11,25 @@
     {% block head %}{% endblock %}
 </head>
 <body>
+<nav class="navbar navbar-light bg-light">
+
+
+    {% if 'user_id' in session %}
+    <a class="navbar-brand">Привет {{ session.get('user_name') }} ({{ session.get('user_role') }})</a>
+    <form class="form-inline" action="{{ link }}" method="get">
+        <button class="btn btn-warning my-2 my-sm-0" type="submit">{{ title }}</button>
+    </form>
+    {% endif %}
+
+    {% if 'user_id' not in session %}
+    <a class="navbar-brand">twitter</a>
+    <form class="form-inline" action="{{ link }}" method="get">
+        <button class="btn btn-warning my-2 my-sm-0" type="submit">{{ title }}</button>
+    </form>
+    {% endif %}
+
+
+</nav>
 
 
 {% with messages = get_flashed_messages(with_categories=true) %}
@@ -28,6 +47,7 @@
 
 {% endif %}
 {% endwith %}
+
 
 {% block body %}{% endblock %}
 </body>
