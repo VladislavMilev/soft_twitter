@@ -14,7 +14,7 @@
 
     <h3>Публикация</h3>
 
-    <form action="/send_message" method="post">
+    <form action="/send" method="post">
         <div class="form-group">
             <label for="title">Название</label>
             <input type="text" name="title" required="true" class="form-control" aria-describedby="nameHelp"
@@ -61,14 +61,14 @@
             <a href="#" class="btn btn-success">
                 <i class="far fa-check-circle"></i>
             </a>
-            <a href="#" class="btn btn-danger">
+            <a href="delete/{{ message.id }}" class="btn btn-danger">
                 <i class="far fa-times-circle"></i>
             </a>
-            <a href="#" class="btn btn-warning">
+            <a href="update/{{ message.id }}" class="btn btn-warning">
                 <i class="fas fa-pencil-alt"></i>
             </a>
             {% endif %}
-            <p class="badge" style="float:right"><i class="far fa-calendar-alt"></i> {{ message.time }}</p>
+            <p class="badge" style="float:right"><i class="far fa-calendar-alt"></i> {{ message.time.date() }}</p>
         </div>
     </div>
     {% endfor %}

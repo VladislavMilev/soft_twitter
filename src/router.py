@@ -1,23 +1,18 @@
 import datetime
 
 from flask import Flask, request, render_template, url_for, redirect, flash, make_response, session
-from fastapi import Cookie, FastAPI
-
-import auth
 from DAO.connection import SESSION
-from DAO.user.entity.userEntity import User, Message
+from DAO.user.entity.userEntity import User, Message, Tag
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 app.permanent_session_lifetime = datetime.timedelta(days=1)
 
-
-# app = FastAPI()
+session_map = SESSION()
 
 
 @app.route('/', methods=['GET'])
 def index():
-
     if 'user_id' in session:
         return render_template('pages/main.html')
     else:
@@ -26,10 +21,8 @@ def index():
 
 @app.route('/main', methods=['GET'])
 def main():
-    session_map = SESSION()
-
     if 'user_id' in session:
-        messages = session_map.query(Message).order_by(Message.id)
+        messages = session_map.query(Message).order_by(Message.id.desc())
         title = 'Sign out'
         link = '/sign_out'
         return render_template('pages/main.html', messages=messages, title=title, link=link)
@@ -41,10 +34,8 @@ def main():
 # MESSAGE
 #
 
-@app.route('/send_message', methods=['POST'])
-def send_message():
-    session_map = SESSION()
-
+@app.route('/send', methods=['POST'])
+def send():
     user_id = session.get('user_id')
     title = request.form['title']
     text = request.form['text']
@@ -54,6 +45,45 @@ def send_message():
     session_map.commit()
 
     return redirect(url_for('main'))
+
+
+@app.route('/delete/<int:id>', methods=['GET', 'POST'])
+def delete(id):
+    find_message_id = session_map.query(Message).filter_by(id=id).first()
+    if find_message_id:
+        session_map.delete(find_message_id)
+        session_map.commit()
+        flash('Сообщение удалено', 'alert-success')
+        return redirect(url_for('main'))
+    else:
+        flash('Не удалось удалить сообщение', 'alert-warning')
+        return redirect(url_for('main'))
+
+
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    title = 'Sign Out'
+    link = '/sign_out'
+
+    find_message_id = session_map.query(Message).filter_by(id=id).first()
+    find_tags = session_map.query(Tag).filter_by(message_id=id).all()
+
+    if request.method == 'POST':
+        mtitle = request.form['title']
+        text = request.form['text']
+        tag = request.form['tag']
+
+        stmt = session_map.query(Message).update().where(Message.id == id).values(title=mtitle, text=text, tag=tag)
+        session_map.add(stmt)
+        session_map.commit()
+        return redirect(url_for('main'))
+
+    else:
+        return render_template('pages/update.html',
+                               message=find_message_id,
+                               tag=find_tags,
+                               title=title,
+                               link=link)
 
 
 #
@@ -83,7 +113,6 @@ def check_register():
 
         return redirect(url_for('register'))
     else:
-        session_map = SESSION()
         check_user = session_map.query(User).filter_by(login=user_login).first()
         if check_user:
             flash('Юзер с таким логином уже существует', 'alert-warning')
@@ -110,8 +139,6 @@ def login():
 @app.route('/check_login', methods=['POST'])
 def check_login():
     if request.method == 'POST':
-        session_map = SESSION()
-
         login = request.form['login']
         password_one = request.form['password']
 

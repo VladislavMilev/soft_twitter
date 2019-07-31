@@ -1,0 +1,40 @@
+{% extends "pages/base.html" %}
+
+{% block head %}
+    <title>Twitter</title>
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="container" style="margin-top: 7%">
+
+        <h3>Публикация</h3>
+
+        <form action="/updade/{{ message.id }}" method="post">
+            <div class="form-group">
+                <label for="title">Название</label>
+                <input type="text" name="title" required="true" class="form-control" aria-describedby="nameHelp"
+                       placeholder="Текст названия" value="{{ message.title }}" >
+                <!--        <small class="form-text text-muted">We'll never share your name with anyone else.</small>-->
+            </div>
+
+            <div class="form-group">
+                <label for="text">Текст</label>
+                <textarea class="form-control" name="text" required="true" rows="3"
+                          placeholder="Текст публикации">{{ message.text }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="tag">Теги</label>
+                <input type="text" name="tag" required="true" class="form-control" placeholder="Ваши теги"
+                       value="{% for t in tag %}{{ t.text }}, {% endfor %}">
+                <small class="form-text text-muted">Напиши теги через запятую.</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Обновить</button>
+        </form>
+        <hr>
+    </div>
+
+{% endblock %}

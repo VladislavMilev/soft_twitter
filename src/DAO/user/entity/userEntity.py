@@ -43,8 +43,8 @@ class Tag(BASE):
     text = Column(Text(32), nullable=False)
 
     # message_id = Column(Integer, ForeignKey('message.id'))
-    message_id = Column(Integer, ForeignKey('message.id'), nullable=False)
+    message_id = Column(Integer, ForeignKey('message.id'))
     message = relationship('Message', backref=backref('tags', lazy=True))
 
 
-# BASE.metadata.create_all(ENGINE)
+BASE.metadata.create_all(ENGINE)
