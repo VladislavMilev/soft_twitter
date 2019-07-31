@@ -9,8 +9,8 @@
 
 
 {% if 'user_id' in session %}
-    {% if session.get('user_role') == 'admin' %}
-    <div class="container" style="margin-top: 7%">
+{% if session.get('user_role') == 'admin' %}
+<div class="container" style="margin-top: 7%">
 
     <h3>Публикация</h3>
 
@@ -37,17 +37,19 @@
         <button type="submit" class="btn btn-primary">Опубликовать</button>
     </form>
     <hr>
-    </div>
-    {% endif %}
+</div>
+{% endif %}
 
 {% endif %}
 <div class="container">
     <h3>Твитты</h3>
     {% for message in messages %}
     <div class="card cardstyle">
-        <img id="card_avatar" src="https://randomuser.me/api/portraits/men/82.jpg" alt="Card image cap">
+        <div style="width:20%">
+            <img id="card_avatar" src="https://randomuser.me/api/portraits/men/86.jpg" alt="Card image cap">
+        </div>
         <div class="card-body">
-            <h2 class="card-text">{{ message.user.name }}</h2>
+            <h2 class="card-text">{{ message.user.name }} написал(а)</h2>
             <h5 class="card-title">{{ message.title }}</h5>
             <p class="card-text">{{ message.text }}</p>
             {% for tag in message.tags %}
@@ -55,7 +57,18 @@
             {% endfor %}
         </div>
         <div class="card-footer text-muted">
-            <p class="badge">{{ message.time }}</p>
+            {% if session.get('user_role') == 'admin' %}
+            <a href="#" class="btn btn-success">
+                <i class="far fa-check-circle"></i>
+            </a>
+            <a href="#" class="btn btn-danger">
+                <i class="far fa-times-circle"></i>
+            </a>
+            <a href="#" class="btn btn-warning">
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+            {% endif %}
+            <p class="badge" style="float:right"><i class="far fa-calendar-alt"></i> {{ message.time }}</p>
         </div>
     </div>
     {% endfor %}
