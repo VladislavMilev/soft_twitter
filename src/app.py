@@ -12,9 +12,6 @@ app.permanent_session_lifetime = datetime.timedelta(days=1)
 session_map = SESSION()
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
 @app.route('/', methods=['GET'])
 def index():
     if 'user_id' in session:
@@ -214,3 +211,8 @@ def sign_out():
     session.pop('user_login', None)
     session.pop('user_role', None)
     return redirect(url_for('login'))
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
