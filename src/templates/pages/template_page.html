@@ -15,7 +15,34 @@
 </head>
 <body>
 <nav class="navbar navbar-light bg-light">
+    {% if 'user_id' in session %}
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+        {% if session.get('user_role') == 'admin' %}
 
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/"><i class="fas fa-home"></i>&nbsp;Главная</a>
+            <a class="dropdown-item" href="/posts"><i class="fas fa-paper-plane"></i>&nbsp;Посты</a>
+            <a class="dropdown-item" href="/users"><i class="fas fa-user-friends"></i>&nbsp;Пользователи</a>
+            <a class="dropdown-item" href="/settings"><i class="fas fa-user-cog"></i>&nbsp;Настройки</a>
+        </div>
+
+        {% endif %}
+
+        {% if session.get('user_role') == 'user' %}
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/"><i class="fas fa-home"></i>&nbsp;Главная</a>
+            <a class="dropdown-item" href="/my-posts"><i class="fas fa-paper-plane"></i>&nbsp;Мои посты</a>
+            <a class="dropdown-item" href="/settings"><i class="fas fa-user-cog"></i>&nbsp;Настройки</a>
+        </div>
+
+        {% endif %}
+    </div>
+    {% endif %}
 
     {% if 'user_id' in session %}
     <a class="navbar-brand">Привет {{ session.get('user_name') }} ({{ session.get('user_role') }})</a>
@@ -25,12 +52,11 @@
     {% endif %}
 
     {% if 'user_id' not in session %}
-    <a class="navbar-brand">twitter</a>
+    <a class="navbar-brand">POSTER</a>
     <form class="form-inline" action="{{ link }}" method="get">
         <button class="btn btn-warning my-2 my-sm-0" type="submit">{{ title }}</button>
     </form>
     {% endif %}
-
 
 </nav>
 

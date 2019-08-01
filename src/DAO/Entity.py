@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Text, DateTime
+from sqlalchemy import Column, Integer, String, ForeignKey, Text, DateTime, Boolean
 from datetime import datetime
 from sqlalchemy.orm import relationship, backref
 from DAO.connection import BASE, ENGINE
@@ -24,6 +24,7 @@ class Message(BASE):
     title = Column(String(64), nullable=False)
     text = Column(Text(1024), nullable=False)
     time = Column(DateTime, default=datetime.utcnow)
+    status = Column(Boolean, default=False, nullable=False)
 
     user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
     user = relationship('User', backref=backref('message', lazy=True))

@@ -1,8 +1,9 @@
 import datetime
 
-from flask import Flask, request, render_template, url_for, redirect, flash, make_response, session
+from flask import Flask, request, render_template, url_for, redirect, flash, session
+
 from DAO.connection import SESSION
-from DAO.user.entity.userEntity import User, Message, Tag
+from DAO.Entity import User, Message, Tag
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -14,18 +15,11 @@ session_map = SESSION()
 @app.route('/', methods=['GET'])
 def index():
     if 'user_id' in session:
-        return render_template('pages/main.html')
-    else:
-        return redirect(url_for('login'))
+        messages = session_map.query(Message).filter_by(status=1).order_by(Message.id.desc())
 
-
-@app.route('/main', methods=['GET'])
-def main():
-    if 'user_id' in session:
-        messages = session_map.query(Message).order_by(Message.id.desc())
         title = 'Sign out'
         link = '/sign_out'
-        return render_template('pages/main.html', messages=messages, title=title, link=link)
+        return render_template('pages/index.html', messages=messages, title=title, link=link)
     else:
         return redirect(url_for('login'))
 
@@ -43,8 +37,10 @@ def send():
 
     session_map.add(Message(title, text, tag, user_id))
     session_map.commit()
-
-    return redirect(url_for('main'))
+    if session.get('user_role') == 'admin':
+        return redirect(url_for('posts'))
+    else:
+        return redirect(url_for('user_posts'))
 
 
 @app.route('/delete/<int:id>', methods=['GET', 'POST'])
@@ -54,10 +50,10 @@ def delete(id):
         session_map.delete(find_message_id)
         session_map.commit()
         flash('Сообщение удалено', 'alert-success')
-        return redirect(url_for('main'))
+        return redirect(url_for('posts'))
     else:
         flash('Не удалось удалить сообщение', 'alert-warning')
-        return redirect(url_for('main'))
+        return redirect(url_for('posts'))
 
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
@@ -69,21 +65,73 @@ def update(id):
     find_tags = session_map.query(Tag).filter_by(message_id=id).all()
 
     if request.method == 'POST':
-        mtitle = request.form['title']
+        message_title = request.form['title']
         text = request.form['text']
-        tag = request.form['tag']
 
-        stmt = session_map.query(Message).update().where(Message.id == id).values(title=mtitle, text=text, tag=tag)
-        session_map.add(stmt)
+        find_message_id.title = message_title
+        find_message_id.text = text
+
         session_map.commit()
-        return redirect(url_for('main'))
+        return redirect(url_for('posts'))
 
     else:
-        return render_template('pages/update.html',
-                               message=find_message_id,
-                               tag=find_tags,
-                               title=title,
-                               link=link)
+        if find_message_id:
+            return render_template('pages/update.html',
+                                   message=find_message_id,
+                                   tag=find_tags,
+                                   title=title,
+                                   link=link)
+        else:
+            return redirect(url_for('posts'))
+
+
+@app.route('/confirm/<int:id>', methods=['GET', 'POST'])
+def confirm(id):
+    if 'user_id' in session:
+        find_message_id = session_map.query(Message).filter_by(id=id).first()
+
+        if find_message_id:
+            find_message_id.status = 1
+            session_map.commit()
+            flash('Пост подтвержден', 'alert-success')
+            return redirect(url_for('posts'))
+        else:
+            flash('Пост не подтвержден', 'alert-warning')
+            return redirect(url_for('index'))
+
+
+#
+# MESSAGE VIEW
+#
+
+@app.route('/posts', methods=['GET'])
+def posts():
+    if 'user_id' in session:
+        messages = session_map.query(Message).filter_by(status=0).order_by(Message.id.desc())
+        title = 'Sign out'
+        link = '/sign_out'
+
+        if session.get('user_role') == 'admin':
+            return render_template('pages/posts.html', messages=messages, title=title, link=link)
+        else:
+            return redirect(url_for('index'))
+    else:
+        return redirect(url_for('login'))
+
+
+@app.route('/my-posts')
+def user_posts():
+    if 'user_id' in session:
+        user_id = session.get('user_id')
+
+        messages = session_map.query(Message).filter_by(user_id=user_id, status=0).order_by(Message.id.desc())
+
+        title = 'Sign out'
+        link = '/sign_out'
+
+        return render_template('pages/user_posts.html', messages=messages, title=title, link=link)
+    else:
+        return redirect(url_for('login'))
 
 
 #
@@ -91,10 +139,41 @@ def update(id):
 #
 
 
+@app.route('/login/', methods=['GET'])
+def login():
+    if 'user_id' in session:
+        user_id = format(session.get('user_id'))
+        return redirect(url_for('posts', user_id=user_id))
+    else:
+        title = 'Register'
+        link = '/register'
+        return render_template('pages/login.html', title=title, link=link)
+
+
+@app.route('/check_login', methods=['POST'])
+def check_login():
+    if request.method == 'POST':
+        login = request.form['login']
+        password_one = request.form['password']
+
+        user = session_map.query(User).filter_by(login=login, password=password_one).first()
+        if user:
+            session['user_id'] = user.id
+            session['user_name'] = user.name
+            session['user_login'] = user.login
+            session['user_role'] = user.role
+
+            flash('Добро пожаловать ' + format(session.get('user_name')), 'alert-success')
+            return redirect(url_for('posts'))
+        else:
+            flash('Неверно введены логин или пароль', 'alert-warning')
+            return redirect(url_for('login'))
+
+
 @app.route('/register/', methods=['GET'])
 def register():
     if 'user_id' in session:
-        return redirect(url_for('main'))
+        return redirect(url_for('posts'))
     else:
         title = 'Login'
         link = '/login'
@@ -122,37 +201,6 @@ def check_register():
             session_map.add(user)
             session_map.commit()
             flash('Пользователь ' + user_login + ' успешно зарегистрирован', 'alert-success')
-            return redirect(url_for('login'))
-
-
-@app.route('/login/', methods=['GET'])
-def login():
-    if 'user_id' in session:
-        user_id = format(session.get('user_id'))
-        return redirect(url_for('main', user_id=user_id))
-    else:
-        title = 'Register'
-        link = '/register'
-        return render_template('pages/login.html', title=title, link=link)
-
-
-@app.route('/check_login', methods=['POST'])
-def check_login():
-    if request.method == 'POST':
-        login = request.form['login']
-        password_one = request.form['password']
-
-        user = session_map.query(User).filter_by(login=login, password=password_one).first()
-        if user:
-            session['user_id'] = user.id
-            session['user_name'] = user.name
-            session['user_login'] = user.login
-            session['user_role'] = user.role
-
-            flash('Добро пожаловать ' + format(session.get('user_name')), 'alert-success')
-            return redirect(url_for('main'))
-        else:
-            flash('Неверно введены логин или пароль', 'alert-warning')
             return redirect(url_for('login'))
 
 

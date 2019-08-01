@@ -1,12 +1,45 @@
-{% extends "pages/base.html" %}
+{% extends "pages/template_page.html" %}
 
 {% block head %}
-    <title>GREETINGS</title>
-
+<title>Twitter</title>
 {% endblock %}
 
 
 {% block body %}
-    <h3>Hello, USER</h3>
-    <a href=" {{ 'main' }} ">MAIN</a>
+
+<div class="container">
+    {% for message in messages %}
+        <br>
+    <div class="card cardstyle">
+        <div style="width:20%">
+            <img id="card_avatar" src="https://randomuser.me/api/portraits/men/86.jpg" alt="Card image cap">
+        </div>
+        <div class="card-body">
+            <h2 class="card-text">{{ message.user.name }} написал(а)</h2>
+            <h5 class="card-title">{{ message.title }}</h5>
+            <p class="card-text">{{ message.text }}</p>
+            {% for tag in message.tags %}
+            <a href='#{{ tag.text }}' class="badge badge-secondary">#{{ tag.text }}</a>
+            {% endfor %}
+        </div>
+        <div class="card-footer text-muted">
+            {% if session.get('user_role') == 'admin' %}
+            {% if message.status == 0 %}
+                <a href="#" class="btn btn-success">
+                    <i class="far fa-check-circle"></i>
+                </a>
+            {% endif %}
+            <a href="delete/{{ message.id }}" class="btn btn-danger">
+                <i class="far fa-trash-alt"></i>
+            </a>
+            <a href="update/{{ message.id }}" class="btn btn-warning">
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+            {% endif %}
+            <p class="badge" style="float:right"><i class="far fa-calendar-alt"></i> {{ message.time.date() }}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
