@@ -6,19 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c68bd9d4-b4a3-42e4-b580-37fd739b8755" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DAO/Entity.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/connection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soft_twitter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/posts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/template_page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/update.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/user_posts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -196,8 +184,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="C:\Users\User\PycharmProjects\soft_twitter\src\DAO" />
       <recent name="C:\Users\User\PycharmProjects\soft_twitter\src\DAO\user" />
       <recent name="C:\Users\User\PycharmProjects\soft_twitter\src\static\css" />
@@ -394,7 +382,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100128000" />
+    <option name="totallyTimeSpent" value="100390000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -615,7 +603,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/requirements.txt">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
