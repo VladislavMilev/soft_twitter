@@ -2,10 +2,12 @@ import datetime
 
 from flask import Flask, request, render_template, url_for, redirect, flash, session
 
-from src.DAO.connection import SESSION
-from src.DAO.Entity import User, Message, Tag
+from app import app
+from app.DAO.connection import SESSION
+from app.DAO.Entity import User, Message, Tag
 
-app = Flask(__name__)
+# app = Flask(__name__)
+# app.run(debug=True)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 app.permanent_session_lifetime = datetime.timedelta(days=1)
 

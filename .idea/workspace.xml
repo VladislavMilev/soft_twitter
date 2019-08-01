@@ -6,7 +6,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c68bd9d4-b4a3-42e4-b580-37fd739b8755" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/oi.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/flask/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/flask/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/flask/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/flask/cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/flask/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/flask/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/cli/cmdoptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/cli/cmdoptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/locations.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/locations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/req/req_uninstall.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/req/req_uninstall.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/resolve.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/resolve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/utils/misc.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/utils/misc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/distlib/_backport/shutil.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/distlib/_backport/shutil.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/distlib/_backport/tarfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/distlib/_backport/tarfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/html5lib/filters/sanitizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/html5lib/filters/sanitizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/pkg_resources/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/pkg_resources/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/pyparsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/pyparsing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/urllib3/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/urllib3/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pkg_resources/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pkg_resources/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pkg_resources/_vendor/pyparsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pkg_resources/_vendor/pyparsing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/_vendor/pyparsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/_vendor/pyparsing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/build_py.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/build_py.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/install_egg_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/install_egg_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/install_lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/install_lib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/wheel.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/wheel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/connectors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/connectors/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/databases/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/databases/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/firebird/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/firebird/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/firebird/kinterbasdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/firebird/kinterbasdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/mssql/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/mssql/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/mysql/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/mysql/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/oracle/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/oracle/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/sqlite/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/sqlite/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/sybase/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/sybase/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/engine/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/engine/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/event/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/event/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/ext/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/ext/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/ext/declarative/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/ext/declarative/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/orm/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/orm/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/pool/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/pool/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/sql/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/sql/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/testing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/testing/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/util/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/util/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/_reloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/_reloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/debug/shared/debugger.js" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/debug/shared/debugger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/debug/tbtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/debug/tbtools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/testapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/testapp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/Entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/DAO/Entity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/DAO/connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/soft_twitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/pages/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/posts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/pages/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/pages/template_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/template_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/pages/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/pages/user_posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/user_posts.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,22 +118,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/soft_twitter.py">
+        <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="17" selection-start-column="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Procfile">
+        <entry file="file://$PROJECT_DIR$/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
+              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -80,9 +168,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Python Script" />
         <option value="HTML File" />
         <option value="HTTP Request" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -92,13 +180,13 @@
       <find>err</find>
       <find>username</find>
       <find>send_message</find>
-      <find>]</find>
       <find>main</find>
+      <find>]</find>
     </findStrings>
     <replaceStrings>
       <replace>user_id</replace>
-      <replace>send</replace>
       <replace>posts</replace>
+      <replace>send</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -144,8 +232,14 @@
         <option value="$PROJECT_DIR$/src/router.py" />
         <option value="$PROJECT_DIR$/src/app.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/oi.http" />
+        <option value="$PROJECT_DIR$/src/soft_twitter.py" />
+        <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/app/DAO/Entity.py" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -173,7 +267,13 @@
             <path>
               <item name="soft_twitter" type="b2602c69:ProjectViewProjectNode" />
               <item name="soft_twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="soft_twitter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="soft_twitter" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -214,7 +314,51 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Python.run">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyweb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/rout.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyweb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pyweb" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -229,50 +373,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/soft_twitter.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="connection" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pyweb" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/DAO" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/DAO/connection.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="db" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pyweb" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/DAO/user" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/DAO/user/db.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -307,6 +407,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyweb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="PythonConfigurationType" factoryName="Python">
       <module name="pyweb" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -333,43 +455,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="userEntity" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pyweb" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/DAO/user/entity" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\User\PycharmProjects\soft_twitter\src\DAO\Entity.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.start" />
-      <item itemvalue="Python.connection" />
       <item itemvalue="Python.router" />
-      <item itemvalue="Python.db" />
-      <item itemvalue="Python.userEntity" />
       <item itemvalue="Python.app" />
+      <item itemvalue="Python.run" />
+      <item itemvalue="Python.__init__" />
+      <item itemvalue="Python.app (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.app (1)" />
+        <item itemvalue="Python.__init__" />
         <item itemvalue="Python.app" />
         <item itemvalue="Python.router" />
-        <item itemvalue="Python.userEntity" />
-        <item itemvalue="Python.connection" />
-        <item itemvalue="Python.db" />
       </list>
     </recent_temporary>
   </component>
@@ -393,7 +493,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101291000" />
+    <option name="totallyTimeSpent" value="102394000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -408,18 +508,18 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18012924" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18012924" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3281471" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.28854313" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.28854313" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.23620933" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.14222223" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3536068" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3536068" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50080776" side_tool="true" weight="0.3437058" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.32956153" />
@@ -508,13 +608,16 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/soft_twitter$start.coverage" NAME="start Coverage Results" MODIFIED="1564680081423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/soft_twitter$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1564698194999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/soft_twitter$app.coverage" NAME="app Coverage Results" MODIFIED="1564694817692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/soft_twitter$db.coverage" NAME="db Coverage Results" MODIFIED="1563744165015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/DAO/user" />
     <SUITE FILE_PATH="coverage/soft_twitter$userEntity.coverage" NAME="userEntity Coverage Results" MODIFIED="1564265109031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/DAO/user/entity" />
     <SUITE FILE_PATH="coverage/soft_twitter$router.coverage" NAME="router Coverage Results" MODIFIED="1564604515130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/soft_twitter$checkUser.coverage" NAME="checkUser Coverage Results" MODIFIED="1563572416020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/DAO/user" />
     <SUITE FILE_PATH="coverage/soft_twitter$connection.coverage" NAME="connection Coverage Results" MODIFIED="1563744327048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/DAO" />
+    <SUITE FILE_PATH="coverage/soft_twitter$run.coverage" NAME="run Coverage Results" MODIFIED="1564698417397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/soft_twitter$router__1_.coverage" NAME="router (1) Coverage Results" MODIFIED="1562968726814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/soft_twitter$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1564698101246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/templates/dir/second.css" />
@@ -538,17 +641,7 @@
     <entry file="file://$PROJECT_DIR$/src/DAO/user/checkUser.py" />
     <entry file="file://$PROJECT_DIR$/src/auth.py" />
     <entry file="file://$PROJECT_DIR$/src/templates/pages/main.html" />
-    <entry file="file://$PROJECT_DIR$/src/DAO/Entity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/pages/register.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/pages/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-48">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
@@ -556,7 +649,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/pages/template_post.html" />
-    <entry file="file://$PROJECT_DIR$/src/templates/pages/template_page.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/pages/template_page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="49" column="51" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="51" />
@@ -566,7 +659,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/pages/posts.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/pages/posts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
@@ -580,7 +673,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/pages/user_posts.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/pages/user_posts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="54" column="24" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="54" selection-end-column="24" />
@@ -594,17 +687,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/pages/login.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/pages/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="40" lean-forward="true" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/pages/index.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/pages/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-15">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/pages/update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oi.http">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DAO/Entity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-462">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DAO/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="68" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#90#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -615,47 +763,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/pages/update.html">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="68" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#90#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/soft_twitter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oi.http">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        <state relative-caret-position="51">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
         </state>
       </provider>
     </entry>
