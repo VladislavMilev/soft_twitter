@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Text, DateTime, Boolean
 from datetime import datetime
 from sqlalchemy.orm import relationship, backref
-from DAO.connection import BASE, ENGINE
+from src.DAO.connection import BASE, ENGINE
 
 
 class User(BASE):

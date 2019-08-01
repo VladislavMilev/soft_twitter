@@ -2,8 +2,8 @@ import datetime
 
 from flask import Flask, request, render_template, url_for, redirect, flash, session
 
-from DAO.connection import SESSION
-from DAO.Entity import User, Message, Tag
+from src.DAO.connection import SESSION
+from src.DAO.Entity import User, Message, Tag
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
