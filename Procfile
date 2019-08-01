@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn soft_twitter:app
