@@ -5,7 +5,14 @@
     <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="c68bd9d4-b4a3-42e4-b580-37fd739b8755" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="c68bd9d4-b4a3-42e4-b580-37fd739b8755" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +57,108 @@
     <select />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/router.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="217" lean-forward="true" selection-start-line="217" selection-end-line="217" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/pages/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/pages/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="40" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/pages/template_page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="49" column="51" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="51" />
+              <folding>
+                <element signature="e#1202#1208#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/pages/posts.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/pages/user_posts.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="54" column="24" selection-start-line="22" selection-start-column="12" selection-end-line="54" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -117,6 +225,7 @@
         <option value="$PROJECT_DIR$/src/templates/pages/posts.html" />
         <option value="$PROJECT_DIR$/src/templates/pages/user_posts.html" />
         <option value="$PROJECT_DIR$/src/templates/pages/index.html" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/router.py" />
         <option value="$PROJECT_DIR$/src/app.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
@@ -128,14 +237,19 @@
         <option value="$PROJECT_DIR$/app/DAO/Entity.py" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app.py" />
+=======
+        <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/src/router.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="160" />
-    <option name="y" value="100" />
-    <option name="width" value="960" />
-    <option name="height" value="600" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -191,8 +305,13 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Python.run">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+  <component name="RunManager" selected="Python.router (1)">
+    <configuration name="connection" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       <module name="pyweb" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -200,12 +319,20 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+<<<<<<< HEAD
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+=======
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/DAO" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+<<<<<<< HEAD
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/rout.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/DAO/connection.py" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,7 +341,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+    <configuration name="db" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       <module name="pyweb" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -222,12 +353,20 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+<<<<<<< HEAD
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+=======
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/DAO/user" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+<<<<<<< HEAD
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/DAO/user/db.py" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -236,7 +375,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+    <configuration name="router (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       <module name="pyweb" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -248,8 +391,12 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+<<<<<<< HEAD
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/soft_twitter.py" />
+=======
+      <option name="SCRIPT_NAME" value="C:\Users\User\PycharmProjects\soft_twitter\router.py" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -337,6 +484,7 @@
       <item itemvalue="Python.app (1)" />
       <item itemvalue="Python.app" />
       <item itemvalue="Python.router" />
+<<<<<<< HEAD
       <item itemvalue="Python.run" />
       <item itemvalue="Python.start" />
     </list>
@@ -347,6 +495,19 @@
         <item itemvalue="Python.__init__" />
         <item itemvalue="Python.app" />
         <item itemvalue="Python.router" />
+=======
+      <item itemvalue="Python.db" />
+      <item itemvalue="Python.userEntity" />
+      <item itemvalue="Python.router (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.router (1)" />
+        <item itemvalue="Python.router" />
+        <item itemvalue="Python.userEntity" />
+        <item itemvalue="Python.connection" />
+        <item itemvalue="Python.db" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       </list>
     </recent_temporary>
   </component>
@@ -367,6 +528,14 @@
       <workItem from="1564181722050" duration="12343000" />
       <workItem from="1564586216576" duration="11309000" />
     </task>
+    <task id="LOCAL-00001" summary="so done">
+      <created>1564670439149</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1564670439150</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -382,20 +551,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+=======
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18012924" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Find" order="1" weight="0.3281471" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.28854313" />
+=======
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3288889" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.32555556" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       <window_info anchor="bottom" id="Debug" order="3" weight="0.23620933" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.14222223" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3536068" />
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.52111113" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50080776" side_tool="true" weight="0.3437058" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.32956153" />
@@ -481,6 +663,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+    <MESSAGE value="so done" />
+    <option name="LAST_COMMIT_MESSAGE" value="so done" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/soft_twitter$start.coverage" NAME="start Coverage Results" MODIFIED="1564680081423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -524,6 +708,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/templates/pages/template_post.html" />
     <entry file="file://$PROJECT_DIR$/app/templates/pages/template_page.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -550,6 +735,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/pages/user_posts.html">
+=======
+    <entry file="file://$PROJECT_DIR$/src/DAO/user/login.py" />
+    <entry file="file://$PROJECT_DIR$/src/DAO/user/checkUser.py" />
+    <entry file="file://$PROJECT_DIR$/src/auth.py" />
+    <entry file="file://$PROJECT_DIR$/src/templates/pages/main.html" />
+    <entry file="file://$PROJECT_DIR$/src/DAO/Entity.py">
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="54" column="24" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="54" selection-end-column="24" />
@@ -584,41 +776,98 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/templates/pages/template_post.html" />
+    <entry file="file://$PROJECT_DIR$/src/templates/pages/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="40" selection-end-line="1" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oi.http" />
     <entry file="file://$PROJECT_DIR$/app/DAO/Entity.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-462">
           <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+=======
+        <state relative-caret-position="561">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/DAO/connection.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="119">
           <caret line="7" column="68" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="68" />
+=======
+        <state relative-caret-position="918">
+          <caret line="54" column="24" selection-start-line="22" selection-start-column="12" selection-end-line="54" selection-end-column="24" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
           <folding>
             <element signature="e#0#90#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/templates/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/pages/template_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="49" column="51" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="51" />
+          <folding>
+            <element signature="e#1202#1208#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/router.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="217" lean-forward="true" selection-start-line="217" selection-end-line="217" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+<<<<<<< HEAD
           <caret column="17" selection-start-column="17" selection-end-column="17" />
         </state>
       </provider>
@@ -641,6 +890,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+=======
+          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+>>>>>>> 791b465e8066439b69ae4665a362847d1b0d77fe
         </state>
       </provider>
     </entry>
