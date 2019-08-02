@@ -1,1 +1,1 @@
-web: gunicorn src:router
+web: gunicorn run:app
