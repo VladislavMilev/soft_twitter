@@ -1,4 +1,4 @@
-#!/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/PROJECTS/soft_twitter/env/bin/python3
+#!/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/PROJECTS/soft_twitter/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
