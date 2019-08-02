@@ -17,7 +17,7 @@ def index():
     if 'user_id' in session:
         messages = session_map.query(Message).filter_by(status=1).order_by(Message.id.desc())
 
-        title = 'Sign out'
+        title = 'Выйти'
         link = '/sign_out'
         return render_template('pages/index.html', messages=messages, title=title, link=link)
     else:
@@ -58,7 +58,7 @@ def delete(id):
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
-    title = 'Sign Out'
+    title = 'Выйти'
     link = '/sign_out'
 
     find_message_id = session_map.query(Message).filter_by(id=id).first()
@@ -108,7 +108,7 @@ def confirm(id):
 def posts():
     if 'user_id' in session:
         messages = session_map.query(Message).filter_by(status=0).order_by(Message.id.desc())
-        title = 'Sign out'
+        title = 'Выйти'
         link = '/sign_out'
 
         if session.get('user_role') == 'admin':
@@ -126,7 +126,7 @@ def user_posts():
 
         messages = session_map.query(Message).filter_by(user_id=user_id, status=0).order_by(Message.id.desc())
 
-        title = 'Sign out'
+        title = 'Выйти'
         link = '/sign_out'
 
         return render_template('pages/user_posts.html', messages=messages, title=title, link=link)
@@ -145,7 +145,7 @@ def login():
         user_id = format(session.get('user_id'))
         return redirect(url_for('posts', user_id=user_id))
     else:
-        title = 'Register'
+        title = 'Регистрация'
         link = '/register'
         return render_template('pages/login.html', title=title, link=link)
 
@@ -175,7 +175,7 @@ def register():
     if 'user_id' in session:
         return redirect(url_for('posts'))
     else:
-        title = 'Login'
+        title = 'Войти'
         link = '/login'
         return render_template('pages/register.html', title=title, link=link)
 
