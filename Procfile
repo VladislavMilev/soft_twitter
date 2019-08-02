@@ -1,1 +1,1 @@
-web: gunicorn router:app
+web: gunicorn --chdir src router:app
