@@ -9,4 +9,4 @@ mysql-connector==2.2.9
 pycparser==2.19
 PyMySQL==0.9.3
 six==1.12.0
-virtualenv==16.7.2as
+virtualenv==16.7.2

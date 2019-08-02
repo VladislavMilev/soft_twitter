@@ -446,12 +446,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.start" />
       <item itemvalue="Python.connection" />
-      <item itemvalue="Python.router" />
       <item itemvalue="Python.db" />
-      <item itemvalue="Python.userEntity" />
       <item itemvalue="Python.router (1)" />
+      <item itemvalue="Python.router" />
+      <item itemvalue="Python.start" />
+      <item itemvalue="Python.userEntity" />
     </list>
     <recent_temporary>
       <list>
