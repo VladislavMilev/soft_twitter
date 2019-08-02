@@ -5,73 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c68bd9d4-b4a3-42e4-b580-37fd739b8755" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/flask/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/flask/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/flask/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/flask/cli.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/flask/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/flask/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/cli/cmdoptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/cli/cmdoptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/locations.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/locations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/req/req_uninstall.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/req/req_uninstall.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/resolve.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/resolve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/utils/misc.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_internal/utils/misc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/distlib/_backport/shutil.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/distlib/_backport/shutil.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/distlib/_backport/tarfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/distlib/_backport/tarfile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/html5lib/filters/sanitizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/html5lib/filters/sanitizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/pkg_resources/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/pkg_resources/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/pyparsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/pyparsing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/urllib3/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pip/_vendor/urllib3/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pkg_resources/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pkg_resources/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pkg_resources/_vendor/pyparsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/pkg_resources/_vendor/pyparsing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/_vendor/pyparsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/_vendor/pyparsing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/build_py.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/build_py.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/install_egg_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/install_egg_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/install_lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/install_lib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/command/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/wheel.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/setuptools/wheel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/connectors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/connectors/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/databases/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/databases/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/firebird/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/firebird/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/firebird/kinterbasdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/firebird/kinterbasdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/mssql/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/mssql/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/mysql/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/mysql/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/oracle/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/oracle/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/sqlite/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/sqlite/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/sybase/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/dialects/sybase/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/engine/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/engine/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/event/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/event/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/ext/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/ext/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/ext/declarative/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/ext/declarative/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/orm/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/orm/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/pool/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/pool/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/sql/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/sql/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/testing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/testing/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/util/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/sqlalchemy/util/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/_reloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/_reloader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/debug/shared/debugger.js" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/debug/shared/debugger.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/debug/tbtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/debug/tbtools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/testapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/testapp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.7/site-packages/werkzeug/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/Entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/DAO/Entity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/DAO/connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/soft_twitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/pages/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/posts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/pages/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/pages/template_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/template_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/pages/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/pages/user_posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pages/user_posts.html" afterDir="false" />
-    </list>
+    <list default="true" id="c68bd9d4-b4a3-42e4-b580-37fd739b8755" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,53 +50,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Procfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" selection-start-column="17" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -264,17 +152,6 @@
               <item name="soft_twitter" type="b2602c69:ProjectViewProjectNode" />
               <item name="soft_twitter" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="soft_twitter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft_twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="soft_twitter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft_twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -291,7 +168,7 @@
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -456,12 +333,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.start" />
-      <item itemvalue="Python.router" />
-      <item itemvalue="Python.app" />
-      <item itemvalue="Python.run" />
       <item itemvalue="Python.__init__" />
       <item itemvalue="Python.app (1)" />
+      <item itemvalue="Python.app" />
+      <item itemvalue="Python.router" />
+      <item itemvalue="Python.run" />
+      <item itemvalue="Python.start" />
     </list>
     <recent_temporary>
       <list>
@@ -493,7 +370,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102394000" />
+    <option name="totallyTimeSpent" value="102854000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -506,7 +383,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18012924" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -715,9 +591,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oi.http">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/oi.http" />
     <entry file="file://$PROJECT_DIR$/app/DAO/Entity.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-462">
