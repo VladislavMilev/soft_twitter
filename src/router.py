@@ -3,7 +3,7 @@ import datetime
 from flask import Flask, request, render_template, url_for, redirect, flash, session
 
 from src.DAO.connection import SESSION
-from src.DAO.Entity import User, Message, Tag
+from src.DAO.entity import User, Message, Tag, Role
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -37,26 +37,23 @@ def send():
 
     session_map.add(Message(title, text, tag, user_id))
     session_map.commit()
-    if session.get('user_role') == 'admin':
-        return redirect(url_for('posts'))
-    else:
-        return redirect(url_for('user_posts'))
+    return redirect(url_for('posts'))
 
 
-@app.route('/delete/<int:id>', methods=['GET', 'POST'])
+@app.route('/post/delete/<int:id>', methods=['GET', 'POST'])
 def delete(id):
     find_message_id = session_map.query(Message).filter_by(id=id).first()
     if find_message_id:
         session_map.delete(find_message_id)
         session_map.commit()
         flash('Сообщение удалено', 'alert-success')
-        return redirect(url_for('posts'))
+        return redirect(url_for('index'))
     else:
         flash('Не удалось удалить сообщение', 'alert-warning')
         return redirect(url_for('posts'))
 
 
-@app.route('/update/<int:id>', methods=['GET', 'POST'])
+@app.route('/post/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     title = 'Выйти'
     link = '/sign_out'
@@ -76,7 +73,7 @@ def update(id):
 
     else:
         if find_message_id:
-            return render_template('pages/update.html',
+            return render_template('pages/update-post.html',
                                    message=find_message_id,
                                    tag=find_tags,
                                    title=title,
@@ -85,7 +82,7 @@ def update(id):
             return redirect(url_for('posts'))
 
 
-@app.route('/confirm/<int:id>', methods=['GET', 'POST'])
+@app.route('/post/confirm/<int:id>', methods=['GET', 'POST'])
 def confirm(id):
     if 'user_id' in session:
         find_message_id = session_map.query(Message).filter_by(id=id).first()
@@ -107,29 +104,19 @@ def confirm(id):
 @app.route('/posts', methods=['GET'])
 def posts():
     if 'user_id' in session:
-        messages = session_map.query(Message).filter_by(status=0).order_by(Message.id.desc())
-        title = 'Выйти'
-        link = '/sign_out'
-
-        if session.get('user_role') == 'admin':
-            return render_template('pages/posts.html', messages=messages, title=title, link=link)
-        else:
-            return redirect(url_for('index'))
-    else:
-        return redirect(url_for('login'))
-
-
-@app.route('/my-posts')
-def user_posts():
-    if 'user_id' in session:
         user_id = session.get('user_id')
+        messages = session_map.query(Message).filter_by(status=0).order_by(Message.id.desc())
+        messages_in_review = session_map.query(Message).filter_by(status=0).all()
+        messages_for_user = session_map.query(Message).filter_by(status=0, user_id=user_id).all()
 
-        messages = session_map.query(Message).filter_by(user_id=user_id, status=0).order_by(Message.id.desc())
+        message_cnt = 0
+        for message in messages_in_review:
+            message_cnt +=1
 
         title = 'Выйти'
         link = '/sign_out'
 
-        return render_template('pages/user_posts.html', messages=messages, title=title, link=link)
+        return render_template('pages/posts.html', messages=messages, message_cnt=message_cnt, messages_for_user=messages_for_user, title=title, link=link)
     else:
         return redirect(url_for('login'))
 
@@ -161,7 +148,8 @@ def check_login():
             session['user_id'] = user.id
             session['user_name'] = user.name
             session['user_login'] = user.login
-            session['user_role'] = user.role
+            session['role'] = user.role.name
+            session['role_id'] = user.role_id
 
             flash('Добро пожаловать ' + format(session.get('user_name')), 'alert-success')
             return redirect(url_for('posts'))
@@ -209,8 +197,27 @@ def sign_out():
     session.pop('user_id', None)
     session.pop('user_name', None)
     session.pop('user_login', None)
-    session.pop('user_role', None)
+    session.pop('role_id', None)
     return redirect(url_for('login'))
+
+
+@app.route('/users', methods=['GET'])
+def users():
+    if 'user_id' in session:
+        title = 'Выйти'
+        link = '/sign_out'
+
+        get_all_users = session_map.query(User).all()
+        get_all_roles = session_map.query(Role).all()
+        return render_template('pages/users.html',
+                               get_all_users=get_all_users,
+                               get_all_roles=get_all_roles,
+                               title=title,
+                               link=link
+                               )
+    else:
+        return redirect(url_for('login'))
+
 
 
 if __name__ == "__main__":

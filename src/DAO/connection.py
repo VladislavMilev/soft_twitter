@@ -11,7 +11,7 @@ SESSION_SCOPE = scoped_session(SESSION)
 BASE = declarative_base()
 
 
-BASE.metadata.create_all(ENGINE)
+# BASE.metadata.create_all(ENGINE)
 
 # for instance in session.query(User).order_by(User.id):
 #     print(instance.name)

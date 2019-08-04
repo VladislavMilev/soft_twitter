@@ -8,16 +8,7 @@
 {% block body %}
 
     <div class="container" style="width: 40%; margin-top: 7%">
-        {% if name %}
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>{{ name }}</strong> You should check in on some of those fields below.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        {% endif %}
-
-        <h3>Авторизация</h3>
+        <h3>Вход</h3>
         <form action="/check_login" method="post">
             <div class="form-group">
                 <label for="login">Логин</label>

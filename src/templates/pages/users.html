@@ -1,0 +1,193 @@
+{% extends "pages/template_page.html" %}
+
+{% block head %}
+    <title>Twitter</title>
+{% endblock %}
+
+
+{% block body %}
+    <div class="container" style="margin-top:5%">
+        <h4>Пользователи</h4><br>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="new-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new"
+                   aria-selected="true">На проверке</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="all-users-tab" data-toggle="tab" href="#all-users" role="tab"
+                   aria-controls="all-users"
+                   aria-selected="false">Все пользователи</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="rejected-tab" data-toggle="tab" href="#rejected" role="tab"
+                   aria-controls="rejected"
+                   aria-selected="false">Отклоненные</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent" style="padding-top:6px">
+
+            <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="new-tab">
+                {#На проверке#}
+                <table class="table table-sm" style="align-self: center">{#    table-hover    #}
+                    <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Логин</th>
+                        <th scope="col">Имя</th>
+                        <th scope="col">Роль</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    {% for user in get_all_users %}
+                        {% if user.role_id == 2 %}
+                            <tbody>
+                            <tr>
+                                <th scope="row">{{ user.id }}</th>
+                                <td><a class="text-secondary" href="user/{{ user.id }}">{{ user.login }}</a></td>
+                                <td>{{ user.name }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-light btn-sm dropdown-toggle"
+                                            data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        {{ user.role.name }}
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        {% for roles in get_all_roles %}
+                                            <a class="dropdown-item"
+                                               href="set-role/{{ roles.name }}/{{ user.id }}">{{ roles.name }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a class="btn btn-light" href="/user/view/{{ user.id }}" role="button"><i
+                                                class="fas fa-eye"></i></a>
+                                        <button type="button" class="btn btn-light btn-sm dropdown"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="/user/edit/{{ user.id }}">Редактировать</a>
+                                            <a class="dropdown-item" href="/user/delete/{{ user.id }}">Удалить</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        {% endif %}
+                    {% endfor %}
+                </table>
+            </div>
+
+            <div class="tab-pane fade" id="all-users" role="tabpanel" aria-labelledby="all-users-tab">
+                {#Все пользователи#}
+                <table class="table table-sm" style="align-self: center">{#    table-hover    #}
+                    <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Логин</th>
+                        <th scope="col">Имя</th>
+                        <th scope="col">Роль</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    {% for user in get_all_users %}
+                        <tbody>
+                        <tr>
+                            <th scope="row">{{ user.id }}</th>
+                            <td><a class="text-secondary" href="user/{{ user.id }}">{{ user.login }}</a></td>
+                            <td>{{ user.name }}</td>
+                            <td>
+                                <button type="button" class="btn btn-light btn-sm dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    {{ user.role.name }}
+                                </button>
+                                <div class="dropdown-menu">
+                                    {% for roles in get_all_roles %}
+                                        <a class="dropdown-item"
+                                           href="set-role/{{ roles.name }}/{{ user.id }}">{{ roles.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a class="btn btn-light" href="/user/view/{{ user.id }}" role="button"><i
+                                            class="fas fa-eye"></i></a>
+                                    <button type="button" class="btn btn-light btn-sm dropdown"
+                                            data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="/user/edit/{{ user.id }}">Редактировать</a>
+                                        <a class="dropdown-item" href="/user/delete/{{ user.id }}">Удалить</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+
+            <div class="tab-pane fade" id="rejected" role="tabpanel" aria-labelledby="rejected-tab">
+                {#Отклоненные#}
+                <table class="table table-sm" style="align-self: center">{#    table-hover    #}
+                    <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Логин</th>
+                        <th scope="col">Имя</th>
+                        <th scope="col">Роль</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    {% for user in get_all_users %}
+                        {% if user.role_id == 4 %}
+                            <tbody>
+                            <tr>
+                                <th scope="row">{{ user.id }}</th>
+                                <td><a class="text-secondary" href="user/{{ user.id }}">{{ user.login }}</a></td>
+                                <td>{{ user.name }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-light btn-sm dropdown-toggle"
+                                            data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        {{ user.role.name }}
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        {% for roles in get_all_roles %}
+                                            <a class="dropdown-item"
+                                               href="set-role/{{ roles.name }}/{{ user.id }}">{{ roles.name }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a class="btn btn-light" href="/user/view/{{ user.id }}" role="button"><i
+                                                class="fas fa-eye"></i></a>
+                                        <button type="button" class="btn btn-light btn-sm dropdown"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="/user/edit/{{ user.id }}">Редактировать</a>
+                                            <a class="dropdown-item" href="/user/delete/{{ user.id }}">Удалить</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        {% endif %}
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

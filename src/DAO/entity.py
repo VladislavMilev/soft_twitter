@@ -1,7 +1,14 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Text, DateTime, Boolean
 from datetime import datetime
 from sqlalchemy.orm import relationship, backref
-from src.DAO.connection import BASE, ENGINE
+from src.DAO.connection import BASE, ENGINE, SESSION
+
+session_map = SESSION()
+
+#   1: 'admin'
+#   2: 'new'
+#   3: 'redactor'
+#   4: 'rejected'
 
 
 class User(BASE):
@@ -10,12 +17,23 @@ class User(BASE):
     name = Column(String(40), nullable=False)
     login = Column(String(40), unique=True, nullable=False)
     password = Column(String(40), nullable=False)
-    role = Column(String(10), nullable=False, default='user')
+
+    role_id = Column(Integer, ForeignKey('role.id'), nullable=False, default=2)
+    role = relationship('Role', backref=backref('user', lazy=True))
 
     def __init__(self, name, login, password):
         self.name = name
         self.login = login
         self.password = password
+
+
+class Role(BASE):
+    __tablename__ = 'role'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(40), nullable=False, unique=True)
+
+    def __init__(self, name):
+        self.name = name
 
 
 class Message(BASE):
@@ -43,9 +61,25 @@ class Tag(BASE):
     id = Column(Integer, primary_key=True)
     text = Column(Text(32), nullable=False)
 
-    # message_id = Column(Integer, ForeignKey('message.id'))
     message_id = Column(Integer, ForeignKey('message.id'))
     message = relationship('Message', backref=backref('tags', lazy=True))
 
 
-BASE.metadata.create_all(ENGINE)
+# BASE.metadata.create_all(ENGINE)
+#
+# roles = {1: 'admin',
+#          2: 'new',
+#          3: 'redactor',
+#          4: 'rejected'
+#          }
+#
+# for item in roles.keys():
+#     id = item
+#     name = roles[item]
+#
+#     set_all_roles = Role(name)
+#
+#     session_map.add(set_all_roles)
+#
+# session_map.flush()
+# session_map.commit()
