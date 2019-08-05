@@ -43,17 +43,19 @@ class Message(BASE):
     text = Column(Text(1024), nullable=False)
     time = Column(DateTime, default=datetime.utcnow)
     status = Column(Boolean, default=False, nullable=False)
+    color = Column(String(30), default='')
 
     user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
     user = relationship('User', backref=backref('message', lazy=True))
 
-    def __init__(self, title, text, tags, user_id):
+    def __init__(self, title, text, tags, user_id, color):
         self.title = title.strip()
         self.text = text.strip()
         self.tags = [
             Tag(text=tag.strip()) for tag in tags.split(',')
         ]
         self.user_id = user_id
+        self.color = color
 
 
 class Tag(BASE):

@@ -1,6 +1,6 @@
 import datetime
 
-from flask import Flask, request, render_template, url_for, redirect, flash, session
+from flask import Flask, request, render_template, url_for, redirect, flash, session, jsonify
 
 from src.DAO.connection import SESSION
 from src.DAO.entity import User, Message, Tag, Role
@@ -34,8 +34,9 @@ def send():
     title = request.form['title']
     text = request.form['text']
     tag = request.form['tag']
+    color = request.form['color']
 
-    session_map.add(Message(title, text, tag, user_id))
+    session_map.add(Message(title, text, tag, user_id, color))
     session_map.commit()
     return redirect(url_for('posts'))
 
@@ -47,7 +48,7 @@ def delete(id):
         session_map.delete(find_message_id)
         session_map.commit()
         flash('Сообщение удалено', 'alert-success')
-        return redirect(url_for('index'))
+        return redirect(url_for('posts'))
     else:
         flash('Не удалось удалить сообщение', 'alert-warning')
         return redirect(url_for('posts'))
@@ -106,17 +107,28 @@ def posts():
     if 'user_id' in session:
         user_id = session.get('user_id')
         messages = session_map.query(Message).filter_by(status=0).order_by(Message.id.desc())
-        messages_in_review = session_map.query(Message).filter_by(status=0).all()
-        messages_for_user = session_map.query(Message).filter_by(status=0, user_id=user_id).all()
 
-        message_cnt = 0
-        for message in messages_in_review:
-            message_cnt +=1
+        messages_in_review_admin = session_map.query(Message).filter_by(status=0).all()
+        messages_in_review_user = session_map.query(Message).filter_by(status=0, user_id=user_id).all()
+
+        message_cnt_user = 0
+        for message in messages_in_review_user:
+            message_cnt_user += 1
+
+        message_cnt_admin = 0
+        for message in messages_in_review_admin:
+            message_cnt_admin += 1
 
         title = 'Выйти'
         link = '/sign_out'
 
-        return render_template('pages/posts.html', messages=messages, message_cnt=message_cnt, messages_for_user=messages_for_user, title=title, link=link)
+        return render_template('pages/posts.html',
+                               messages=messages,
+                               message_cnt_user=message_cnt_user,
+                               message_cnt_admin=message_cnt_admin,
+                               title=title,
+                               link=link
+                               )
     else:
         return redirect(url_for('login'))
 
@@ -217,7 +229,6 @@ def users():
                                )
     else:
         return redirect(url_for('login'))
-
 
 
 if __name__ == "__main__":
