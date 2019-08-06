@@ -7,15 +7,22 @@ from src.DAO.entity import User, Message, Tag, Role
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-app.permanent_session_lifetime = datetime.timedelta(hours=12)
+app.permanent_session_lifetime = datetime.timedelta(hours=1)
 
 session_map = SESSION()
+
+message_statuses = {
+    'inreview': 0,
+    'aproved': 1,
+    'rejected': 2
+}
 
 
 @app.route('/', methods=['GET'])
 def index():
     if 'user_id' in session:
-        messages = session_map.query(Message).filter_by(status=1).order_by(Message.id.desc())
+
+        messages = session_map.query(Message).filter_by(status=message_statuses['aproved']).order_by(Message.id.desc())
 
         title = 'Выйти'
         link = '/sign_out'
@@ -46,43 +53,44 @@ def posts():
     if 'user_id' in session:
         user_id = session.get('user_id')
 
-        inreview = 0
-        aproved = 1
-        rejected = 2
+        messages = session_map.query(Message).filter_by(status=message_statuses['inreview']).order_by(Message.id.desc())
+        messages_reject = session_map.query(Message).filter_by(status=message_statuses['rejected']).order_by(
+            Message.id.desc())
 
-        messages = session_map.query(Message).filter_by(status=aproved).order_by(Message.id.desc())
+        filter_review_admin = session_map.query(Message).filter_by(status=message_statuses['inreview']).all()
+        filter_review_user = session_map.query(Message).filter_by(status=message_statuses['inreview'],
+                                                                  user_id=user_id).all()
 
-        messages_in_review_admin = session_map.query(Message).filter_by(status=inreview).all()
-        messages_in_review_user = session_map.query(Message).filter_by(status=inreview, user_id=user_id).all()
+        filter_reject_admin = session_map.query(Message).filter_by(status=message_statuses['rejected']).all()
+        filter_reject_user = session_map.query(Message).filter_by(status=message_statuses['rejected'],
+                                                                  user_id=user_id).all()
 
-        messages_rejected_admin = session_map.query(Message).filter_by(status=rejected).all()
-        messages_rejected_user = session_map.query(Message).filter_by(status=rejected, user_id=user_id).all()
+        cnt_filter_review_admin = 0
+        for message in filter_review_admin:
+            cnt_filter_review_admin += 1
 
-        message_cnt_review_user = 0
-        for message in messages_in_review_user:
-            message_cnt_review_user += 1
+        cnt_filter_review_user = 0
+        for message in filter_review_user:
+            cnt_filter_review_user += 1
 
-        message_cnt_review_admin = 0
-        for message in messages_in_review_admin:
-            message_cnt_review_admin += 1
+        cnt_filter_reject_admin = 0
+        for message in filter_reject_admin:
+            cnt_filter_reject_admin += 1
 
-        message_cnt_rejected_user = 0
-        for message in messages_in_review_user:
-            message_cnt_rejected_user += 1
-
-        message_cnt_rejected_admin = 0
-        for message in messages_in_review_admin:
-            message_cnt_rejected_admin += 1
+        cnt_filter_reject_user = 0
+        for message in filter_reject_user:
+            cnt_filter_reject_user += 1
 
         title = 'Выйти'
         link = '/sign_out'
 
         return render_template('pages/posts.html',
                                messages=messages,
-                               message_cnt_review_user=message_cnt_review_user,
-                               message_cnt_review_admin=message_cnt_review_admin,
-                               message_cnt_rejected_admin=message_cnt_rejected_admin,
-                               message_cnt_rejected_user=message_cnt_rejected_user,
+                               messages_reject=messages_reject,
+                               cnt_filter_review_admin=cnt_filter_review_admin,
+                               cnt_filter_review_user=cnt_filter_review_user,
+                               cnt_filter_reject_admin=cnt_filter_reject_admin,
+                               cnt_filter_reject_user=cnt_filter_reject_user,
                                title=title,
                                link=link
                                )

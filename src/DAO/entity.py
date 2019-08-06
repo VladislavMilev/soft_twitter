@@ -21,7 +21,7 @@ class User(BASE):
     role_id = Column(Integer, ForeignKey('role.id'), nullable=False, default=2)
     role = relationship('Role', backref=backref('user', lazy=True))
 
-    def __init__(self, name, login, password):
+    def __init__(self, name, login, password, role_id=role_id):
         self.name = name
         self.login = login
         self.password = password
@@ -48,7 +48,7 @@ class Message(BASE):
     user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
     user = relationship('User', backref=backref('message', lazy=True))
 
-    def __init__(self, title, text, tags, user_id, color, status=status):
+    def __init__(self, title, text, tags, user_id, color, status=0):
         self.title = title.strip()
         self.text = text.strip()
         self.tags = [
@@ -56,6 +56,7 @@ class Message(BASE):
         ]
         self.user_id = user_id
         self.color = color
+        self.status = status
 
 
 class Tag(BASE):
@@ -67,9 +68,9 @@ class Tag(BASE):
     message = relationship('Message', backref=backref('tags', lazy=True))
 
 
-BASE.metadata.create_all(ENGINE)
-#
-#
+# BASE.metadata.create_all(ENGINE)
+
+
 # roles = {1: 'admin',
 #          2: 'new',
 #          3: 'redactor',
@@ -84,8 +85,8 @@ BASE.metadata.create_all(ENGINE)
 #
 #     session_map.add(set_all_roles)
 #
-# user_admin = User('Vlad', 'admin', 'admin')
-# user_user = User('Nina', 'user', 'user')
+# user_admin = User('Vlad', 'admin', 'admin', 1)
+# user_user = User('Nina', 'user', 'user', 2)
 #
 # session_map.add(user_admin)
 # session_map.add(user_user)
