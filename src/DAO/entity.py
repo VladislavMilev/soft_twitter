@@ -42,13 +42,13 @@ class Message(BASE):
     title = Column(String(64), nullable=False)
     text = Column(Text(1024), nullable=False)
     time = Column(DateTime, default=datetime.utcnow)
-    status = Column(Boolean, default=False, nullable=False)
+    status = Column(Integer, default=1, nullable=False)
     color = Column(String(30), default='')
 
     user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
     user = relationship('User', backref=backref('message', lazy=True))
 
-    def __init__(self, title, text, tags, user_id, color):
+    def __init__(self, title, text, tags, user_id, color, status=status):
         self.title = title.strip()
         self.text = text.strip()
         self.tags = [
@@ -69,12 +69,13 @@ class Tag(BASE):
 
 # BASE.metadata.create_all(ENGINE)
 #
+#
 # roles = {1: 'admin',
 #          2: 'new',
 #          3: 'redactor',
 #          4: 'rejected'
 #          }
-#
+
 # for item in roles.keys():
 #     id = item
 #     name = roles[item]
@@ -83,5 +84,23 @@ class Tag(BASE):
 #
 #     session_map.add(set_all_roles)
 #
+# user_admin = User('Vlad', 'admin', 'admin')
+# user_user = User('Nina', 'user', 'user')
+#
+# session_map.add(user_admin)
+# session_map.add(user_user)
+#
 # session_map.flush()
 # session_map.commit()
+#
+#
+# message_statuses = ('inreview',
+#                     'aproved',
+#                     'rejected'
+#                     )
+
+
+
+
+
+

@@ -13,21 +13,26 @@
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
                aria-selected="true">Создать</a>
         </li>
-        {% if session.get('role_id') != 1 %}
+        {% if session.get('role') != 'admin' %}
         <li class="nav-item">
             <a class="nav-link" id="create-tab" data-toggle="tab" href="#create" role="tab" aria-controls="create"
                aria-selected="false">На проверке&nbsp;<span
-                    class="badge badge-warning">{{ message_cnt_user }}</span></a>
+                    class="badge badge-warning">{{ message_cnt_review_user }}</span></a>
         </li>
         {% endif %}
 
-        {% if session.get('role_id') == 1 %}
+        {% if session.get('role') == 'admin' %}
         <li class="nav-item">
             <a class="nav-link" id="create-tab" data-toggle="tab" href="#create" role="tab" aria-controls="create"
                aria-selected="false">На проверке&nbsp;<span
-                    class="badge badge-warning">{{ message_cnt_admin }}</span></a>
+                    class="badge badge-warning">{{ message_cnt_review_user }}</span></a>
         </li>
         {% endif %}
+        <li class="nav-item">
+            <a class="nav-link" id="rejected-tab" data-toggle="tab" href="#rejected" role="tab" aria-controls="rejected"
+               aria-selected="false">Отклоненные&nbsp;<span
+                    class="badge badge-danger">{{ message_cnt_review_admin }}</span></a>
+        </li>
     </ul>
     <div class="tab-content" id="myTabContent" style="padding-top:6px">
 
@@ -88,14 +93,15 @@
 
             {# Вывод сообщений юзера #}
 
-            {% if message.user_id == session.get('user_id') and session.get('role_id') != 1 %}
+            {% if message.user_id == session.get('user_id') and message.status == 0 %}
             <div class="card cardstyle {{ message.color }}">
                 <div style="width:20%">
                     <img id="card_avatar" src="https://randomuser.me/api/portraits/men/81.jpg"
                          alt="Card image cap">
                 </div>
                 <div class="card-body">
-                    <h2 class="card-text">{{ message.user.name }} написал(а)</h2>
+                    <h2 class="card-text"><a href="/user/view/{{ message.user.id }}">{{ message.user.name }}</a>&nbsp;написал(а)
+                    </h2>
                     <h5 class="card-title">{{ message.title }}</h5>
                     <p class="card-text">{{ message.text }}</p>
                     {% for tag in message.tags %}
@@ -103,15 +109,12 @@
                     {% endfor %}
                 </div>
                 <div class="card-footer text-muted">
-                    {% if session.get('role_id') == 1 %}
+                    {% if session.get('role') == 'admin' %}
                     <a href="/post/confirm/{{ message.id }}" class="btn btn-success">
                         <i class="far fa-check-circle"></i>
                     </a>
                     <a href="/post/delete/{{ message.id }}" class="btn btn-danger">
                         <i class="far fa-trash-alt"></i>
-                    </a>
-                    <a href="/post/update/{{ message.id }}" class="btn btn-warning">
-                        <i class="fas fa-pencil-alt"></i>
                     </a>
                     {% endif %}
                     <p class="badge" style="float:right"><i
@@ -123,14 +126,56 @@
 
             {# Вывод сообщений для админа #}
 
-            {% if session.get('role_id') == 1 %}
+            {% if session.get('role') == 'admin' %}
             <div class="card cardstyle {{ message.color }}">
                 <div style="width:20%">
                     <img id="card_avatar" src="https://randomuser.me/api/portraits/men/81.jpg"
                          alt="Card image cap">
                 </div>
                 <div class="card-body">
-                    <h2 class="card-text">{{ message.user.name }} написал(а)</h2>
+                    <h2 class="card-text"><a href="/user/view/{{ message.user.id }}">{{ message.user.name }}</a>&nbsp;написал(а)
+                    </h2>                    <h5 class="card-title">{{ message.title }}</h5>
+                    <p class="card-text">{{ message.text }}</p>
+                    {% for tag in message.tags %}
+                    <a href='#{{ tag.text }}' class="badge badge-secondary">#{{ tag.text }}</a>
+                    {% endfor %}
+                </div>
+                <div class="card-footer text-muted">
+                    {% if session.get('role') == 'admin' %}
+                    <a href="/post/confirm/{{ message.id }}" class="btn btn-success">
+                        <i class="far fa-check-circle"></i>
+                    </a>
+                    <a href="/post/reject/{{ message.id }}" class="btn btn-danger">
+                        <i class="far fa-times-circle"></i>
+                    </a>
+                    <!--                    <a href="/post/update/{{ message.id }}" class="btn btn-warning">-->
+                    <!--                        <i class="fas fa-pencil-alt"></i>-->
+                    <!--                    </a>-->
+                    {% endif %}
+                    <p class="badge" style="float:right"><i
+                            class="far fa-calendar-alt"></i> {{ message.time.date() }}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="tab-pane fade" id="rejected" role="tabpanel" aria-labelledby="rejected-tab">
+
+            {% for message in messages %}
+
+            {# Вывод отклоненных сообщений юзера #}
+
+            {% if message.user_id == session.get('user_id') and session.get('role') != 'admin' or message.status == 2 %}
+            <div class="card cardstyle {{ message.color }}">
+                <div style="width:20%">
+                    <img id="card_avatar" src="https://randomuser.me/api/portraits/men/81.jpg"
+                         alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h2 class="card-text"><a href="/user/view/{{ message.user.id }}">{{ message.user.name }}</a>&nbsp;написал(а)
+                    </h2>
                     <h5 class="card-title">{{ message.title }}</h5>
                     <p class="card-text">{{ message.text }}</p>
                     {% for tag in message.tags %}
@@ -138,15 +183,12 @@
                     {% endfor %}
                 </div>
                 <div class="card-footer text-muted">
-                    {% if session.get('role_id') == 1 %}
+                    {% if session.get('role') == 'admin' %}
                     <a href="/post/confirm/{{ message.id }}" class="btn btn-success">
                         <i class="far fa-check-circle"></i>
                     </a>
                     <a href="/post/delete/{{ message.id }}" class="btn btn-danger">
                         <i class="far fa-trash-alt"></i>
-                    </a>
-                    <a href="/post/update/{{ message.id }}" class="btn btn-warning">
-                        <i class="fas fa-pencil-alt"></i>
                     </a>
                     {% endif %}
                     <p class="badge" style="float:right"><i
@@ -155,6 +197,42 @@
                 </div>
             </div>
             {% endif %}
+
+            {# Вывод отклоненных сообщений для админа #}
+
+            {% if session.get('role') == 'admin' and message.status == 2 %}
+            <div class="card cardstyle {{ message.color }}">
+                <div style="width:20%">
+                    <img id="card_avatar" src="https://randomuser.me/api/portraits/men/81.jpg"
+                         alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h2 class="card-text"><a href="/user/view/{{ message.user.id }}">{{ message.user.name }}</a>&nbsp;написал(а)
+                    </h2>                    <h5 class="card-title">{{ message.title }}</h5>
+                    <p class="card-text">{{ message.text }}</p>
+                    {% for tag in message.tags %}
+                    <a href='#{{ tag.text }}' class="badge badge-secondary">#{{ tag.text }}</a>
+                    {% endfor %}
+                </div>
+                <div class="card-footer text-muted">
+                    {% if session.get('role') == 'admin' %}
+                    <a href="/post/confirm/{{ message.id }}" class="btn btn-success">
+                        <i class="far fa-check-circle"></i>
+                    </a>
+                    <a href="/post/reject/{{ message.id }}" class="btn btn-danger">
+                        <i class="far fa-times-circle"></i>
+                    </a>
+                    <!--                    <a href="/post/update/{{ message.id }}" class="btn btn-warning">-->
+                    <!--                        <i class="fas fa-pencil-alt"></i>-->
+                    <!--                    </a>-->
+                    {% endif %}
+                    <p class="badge" style="float:right"><i
+                            class="far fa-calendar-alt"></i> {{ message.time.date() }}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+
             {% endfor %}
         </div>
     </div>

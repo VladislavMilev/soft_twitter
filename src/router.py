@@ -41,6 +41,48 @@ def send():
     return redirect(url_for('posts'))
 
 
+@app.route('/posts', methods=['GET'])
+def posts():
+    if 'user_id' in session:
+        user_id = session.get('user_id')
+
+        inreview = 0
+        aproved = 1
+        rejected = 2
+
+        messages = session_map.query(Message).filter_by(status=aproved).order_by(Message.id.desc())
+
+        messages_in_review_admin = session_map.query(Message).filter_by(status=inreview).all()
+        messages_in_review_user = session_map.query(Message).filter_by(status=inreview, user_id=user_id).all()
+
+        messages_rejected_admin = session_map.query(Message).filter_by(status=rejected).all()
+        messages_rejected_user = session_map.query(Message).filter_by(status=rejected, user_id=user_id).all()
+
+        message_cnt_review_user = 0
+        for message in messages_in_review_user:
+            message_cnt_review_user += 1
+
+        message_cnt_review_admin = 0
+        for message in messages_in_review_admin:
+            message_cnt_review_admin += 1
+
+        title = 'Выйти'
+        link = '/sign_out'
+
+        return render_template('pages/posts.html',
+                               messages=messages,
+                               message_cnt_user=message_cnt_review_user,
+                               message_cnt_admin=message_cnt_review_admin,
+                               messages_rejected_admin=messages_rejected_admin,
+                               messages_rejected_user=messages_rejected_user,
+                               title=title,
+                               link=link
+                               )
+
+    else:
+        return redirect(url_for('login'))
+
+
 @app.route('/post/delete/<int:id>', methods=['GET', 'POST'])
 def delete(id):
     find_message_id = session_map.query(Message).filter_by(id=id).first()
@@ -48,10 +90,35 @@ def delete(id):
         session_map.delete(find_message_id)
         session_map.commit()
         flash('Сообщение удалено', 'alert-success')
-        return redirect(url_for('posts'))
+        return redirect(url_for('index'))
     else:
         flash('Не удалось удалить сообщение', 'alert-warning')
-        return redirect(url_for('posts'))
+        return redirect(url_for('index'))
+
+
+# @app.route('/post/reject/<int:id>', methods=['GET', 'POST'])
+# def update(id):
+#     title = 'Выйти'
+#     link = '/sign_out'
+#
+#     find_message_id = session_map.query(Message).filter_by(id=id).first()
+#
+#     if request.method == 'POST':
+#         text = request.form['text']
+#
+#         find_message_id.text = text
+#
+#         session_map.commit()
+#         return redirect(url_for('posts'))
+#
+#     else:
+#         if find_message_id:
+#             return render_template('pages/update-post.html',
+#                                    message=find_message_id,
+#                                    title=title,
+#                                    link=link)
+#         else:
+#             return redirect(url_for('posts'))
 
 
 @app.route('/post/update/<int:id>', methods=['GET', 'POST'])
@@ -99,41 +166,6 @@ def confirm(id):
 
 
 #
-# MESSAGE VIEW
-#
-
-@app.route('/posts', methods=['GET'])
-def posts():
-    if 'user_id' in session:
-        user_id = session.get('user_id')
-        messages = session_map.query(Message).filter_by(status=0).order_by(Message.id.desc())
-
-        messages_in_review_admin = session_map.query(Message).filter_by(status=0).all()
-        messages_in_review_user = session_map.query(Message).filter_by(status=0, user_id=user_id).all()
-
-        message_cnt_user = 0
-        for message in messages_in_review_user:
-            message_cnt_user += 1
-
-        message_cnt_admin = 0
-        for message in messages_in_review_admin:
-            message_cnt_admin += 1
-
-        title = 'Выйти'
-        link = '/sign_out'
-
-        return render_template('pages/posts.html',
-                               messages=messages,
-                               message_cnt_user=message_cnt_user,
-                               message_cnt_admin=message_cnt_admin,
-                               title=title,
-                               link=link
-                               )
-    else:
-        return redirect(url_for('login'))
-
-
-#
 # USER
 #
 
@@ -142,7 +174,7 @@ def posts():
 def login():
     if 'user_id' in session:
         user_id = format(session.get('user_id'))
-        return redirect(url_for('posts', user_id=user_id))
+        return redirect(url_for('index', user_id=user_id))
     else:
         title = 'Регистрация'
         link = '/register'
@@ -164,7 +196,7 @@ def check_login():
             session['role_id'] = user.role_id
 
             flash('Добро пожаловать ' + format(session.get('user_name')), 'alert-success')
-            return redirect(url_for('posts'))
+            return redirect(url_for('index'))
         else:
             flash('Неверно введены логин или пароль', 'alert-warning')
             return redirect(url_for('login'))
