@@ -231,17 +231,5 @@ def users():
         return redirect(url_for('login'))
 
 
-@app.route('/api/user/info')
-def user_info():
-    user = {
-        'id': session['user_id'],
-        'username': session['user_name'],
-        'login': session['user_login'],
-        'role': session['role'],
-        'role_id': session['role_id'],
-    }
-    return jsonify(user)
-
-
 if __name__ == "__main__":
     app.run(debug=True)
