@@ -66,15 +66,23 @@ def posts():
         for message in messages_in_review_admin:
             message_cnt_review_admin += 1
 
+        message_cnt_rejected_user = 0
+        for message in messages_in_review_user:
+            message_cnt_rejected_user += 1
+
+        message_cnt_rejected_admin = 0
+        for message in messages_in_review_admin:
+            message_cnt_rejected_admin += 1
+
         title = 'Выйти'
         link = '/sign_out'
 
         return render_template('pages/posts.html',
                                messages=messages,
-                               message_cnt_user=message_cnt_review_user,
-                               message_cnt_admin=message_cnt_review_admin,
-                               messages_rejected_admin=messages_rejected_admin,
-                               messages_rejected_user=messages_rejected_user,
+                               message_cnt_review_user=message_cnt_review_user,
+                               message_cnt_review_admin=message_cnt_review_admin,
+                               message_cnt_rejected_admin=message_cnt_rejected_admin,
+                               message_cnt_rejected_user=message_cnt_rejected_user,
                                title=title,
                                link=link
                                )

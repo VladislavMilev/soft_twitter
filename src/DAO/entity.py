@@ -67,7 +67,7 @@ class Tag(BASE):
     message = relationship('Message', backref=backref('tags', lazy=True))
 
 
-# BASE.metadata.create_all(ENGINE)
+BASE.metadata.create_all(ENGINE)
 #
 #
 # roles = {1: 'admin',

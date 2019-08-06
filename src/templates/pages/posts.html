@@ -25,14 +25,26 @@
         <li class="nav-item">
             <a class="nav-link" id="create-tab" data-toggle="tab" href="#create" role="tab" aria-controls="create"
                aria-selected="false">На проверке&nbsp;<span
-                    class="badge badge-warning">{{ message_cnt_review_user }}</span></a>
+                    class="badge badge-warning">{{ message_cnt_review_admin }}</span></a>
         </li>
         {% endif %}
+
+        {% if session.get('role') != 'admin' %}
         <li class="nav-item">
             <a class="nav-link" id="rejected-tab" data-toggle="tab" href="#rejected" role="tab" aria-controls="rejected"
                aria-selected="false">Отклоненные&nbsp;<span
-                    class="badge badge-danger">{{ message_cnt_review_admin }}</span></a>
+                    class="badge badge-danger">{{ message_cnt_rejected_admin }}</span></a>
         </li>
+        {% endif %}
+
+        {% if session.get('role') == 'admin' %}
+        <li class="nav-item">
+            <a class="nav-link" id="rejected-tab" data-toggle="tab" href="#rejected" role="tab" aria-controls="rejected"
+               aria-selected="false">Отклоненные&nbsp;<span
+                    class="badge badge-danger">{{ message_cnt_rejected_user }}</span></a>
+        </li>
+        {% endif %}
+
     </ul>
     <div class="tab-content" id="myTabContent" style="padding-top:6px">
 
