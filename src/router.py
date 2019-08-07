@@ -41,9 +41,8 @@ def send():
     title = request.form['title']
     text = request.form['text']
     tag = request.form['tag']
-    color = request.form['color']
 
-    session_map.add(Message(title, text, tag, user_id, color))
+    session_map.add(Message(title, text, tag, user_id))
     session_map.commit()
     return redirect(url_for('posts'))
 
@@ -112,29 +111,22 @@ def delete(id):
         return redirect(url_for('index'))
 
 
-# @app.route('/post/reject/<int:id>', methods=['GET', 'POST'])
-# def update(id):
-#     title = 'Выйти'
-#     link = '/sign_out'
-#
-#     find_message_id = session_map.query(Message).filter_by(id=id).first()
-#
-#     if request.method == 'POST':
-#         text = request.form['text']
-#
-#         find_message_id.text = text
-#
-#         session_map.commit()
-#         return redirect(url_for('posts'))
-#
-#     else:
-#         if find_message_id:
-#             return render_template('pages/update-post.html',
-#                                    message=find_message_id,
-#                                    title=title,
-#                                    link=link)
-#         else:
-#             return redirect(url_for('posts'))
+@app.route('/post/reject/<int:id>', methods=['GET', 'POST'])
+def reject(id):
+    find_message_id = session_map.query(Message).filter_by(id=id).first()
+
+    if find_message_id:
+        rejected = message_statuses['rejected']
+
+        find_message_id.status = rejected
+
+        session_map.commit()
+        flash('Пост отклонен', 'alert-success')
+        return redirect(url_for('posts'))
+
+    else:
+        flash('Пост не отклонен', 'alert-warning')
+        return redirect(url_for('posts'))
 
 
 @app.route('/post/update/<int:id>', methods=['GET', 'POST'])

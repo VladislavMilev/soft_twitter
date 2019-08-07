@@ -21,7 +21,7 @@ class User(BASE):
     role_id = Column(Integer, ForeignKey('role.id'), nullable=False, default=2)
     role = relationship('Role', backref=backref('user', lazy=True))
 
-    def __init__(self, name, login, password, role_id=role_id):
+    def __init__(self, name, login, password):
         self.name = name
         self.login = login
         self.password = password
@@ -42,21 +42,18 @@ class Message(BASE):
     title = Column(String(64), nullable=False)
     text = Column(Text(1024), nullable=False)
     time = Column(DateTime, default=datetime.utcnow)
-    status = Column(Integer, default=1, nullable=False)
-    color = Column(String(30), default='')
+    status = Column(Integer, default=0, nullable=False)
 
     user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
     user = relationship('User', backref=backref('message', lazy=True))
 
-    def __init__(self, title, text, tags, user_id, color, status=0):
+    def __init__(self, title, text, tags, user_id):
         self.title = title.strip()
         self.text = text.strip()
         self.tags = [
             Tag(text=tag.strip()) for tag in tags.split(',')
         ]
         self.user_id = user_id
-        self.color = color
-        self.status = status
 
 
 class Tag(BASE):
