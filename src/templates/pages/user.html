@@ -1,0 +1,17 @@
+{% extends "pages/template_page.html" %}
+
+{% block head %}
+    <title>Jposter | {{ session.get('user_name') + ' - ' + session.get('role') }} | user page</title>
+{% endblock %}
+
+
+{% block body %}
+
+    <h4>{{ user.id }}</h4>
+    <h4>{{ user.name }}</h4>
+    <h4>{{ user.login }}</h4>
+    <h4>{{ user.role_id }}</h4>
+    <h4>{{ user.role.name }}</h4>
+    <h4>{{ mc }}</h4>
+
+{% endblock %}

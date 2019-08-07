@@ -301,5 +301,26 @@ def set_role(role, id):
         return redirect(url_for('users'))
 
 
+@app.route('/user/<int:id>')
+def user(id):
+    if session.get('role') == 'admin' or session.get('id') == id:
+        title = 'Выйти'
+        link = '/sign_out'
+
+        user = session_map.query(User).filter_by(id=id).first()
+        message_count = session_map.query(Message).filter_by(user_id=id).all()
+
+        mc = 0
+        for messages in message_count:
+            mc += 1
+
+        return render_template('pages/user.html',
+                               user=user,
+                               mc=mc,
+                               title=title,
+                               link=link,
+                               )
+
+
 if __name__ == "__main__":
     app.run(debug=True)
