@@ -215,7 +215,7 @@ def register():
     if 'user_id' in session:
         return redirect(url_for('posts'))
     else:
-        title = 'Войти'
+        title = 'Вход'
         link = '/login'
         return render_template('pages/register.html', title=title, link=link)
 

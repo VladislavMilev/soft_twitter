@@ -16,31 +16,45 @@
     <form action="/check_register" method="post">
         <div class="form-group">
             <label for="name">Имя</label>
-            <input type="text" name="name" class="form-control" placeholder="Имя">
-            {#
-            <small id="emailHelp" class="form-text text-muted"></small>
-            #}
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-circle"></i></span>
+                </div>
+                <input type="text" name="login" required="true" class="form-control" placeholder="Введите имя" aria-label="Name"
+                       aria-describedby="basic-addon1">
+            </div>
 
-            <label for="login">Логин</label>
-            <input type="text" name="login" class="form-control" placeholder="Введите Логин">
-            {#
-            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
-            #}
-        </div>
-        <div class="form-group">
-            <label for="password_one">Пароль</label>
-            <input type="password" name="password_one" class="form-control" placeholder="Введите пароль">
-        </div>
-        <div class="form-group">
-            <label for="password_two">Повторите пароль</label>
-            <input type="password" name="password_two" class="form-control" placeholder="Повторите пароль">
+            <label for="login">Email</label>
 
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon2"><i class="fas fa-at"></i></span>
+                </div>
+                <input type="email" name="login" required="true" class="form-control" placeholder="Введите email" aria-label="Login"
+                       aria-describedby="basic-addon2">
+            </div>
+            <small class="form-text text-muted">Мы не передаем email-адреса третьим лицам</small>
         </div>
+
         <div class="form-group form-check">
             <input type="checkbox" required="true" class="form-check-input">
-            <label class="form-check-label" for="exampleCheck1">Ты не пройдёшь</label>
+            <label class="form-check-label" for="exampleCheck1">Я соглашаюсь с условиями использования сервиса</label>
         </div>
-        <button type="submit" class="btn btn-primary">Регистрация</button>
+
+        <label for="password_one">Пароль</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+            </div>
+            <input type="password" name="password_one" required="true" class="form-control" placeholder="Придумайте пароль">
+            <input type="password" name="password_two" required="true" class="form-control" placeholder="Повторите его">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit" id="button-addon2">Регистрация</button>
+            </div>
+        </div>
+
+
+
     </form>
 
 </div>
