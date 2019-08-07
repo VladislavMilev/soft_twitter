@@ -17,6 +17,13 @@ message_statuses = {
     'rejected': 2
 }
 
+user_statuses = {
+    'admin': 1,
+    'new': 2,
+    'redactor': 3,
+    'rejected': 4,
+}
+
 
 @app.route('/', methods=['GET'])
 def index():
@@ -269,6 +276,29 @@ def users():
                                )
     else:
         return redirect(url_for('login'))
+
+
+@app.route('/set-role/<string:role>/<int:id>', methods=['GET', 'POST'])
+def set_role(role, id):
+    find_id = session_map.query(User).filter_by(id=id).first()
+
+    if find_id:
+        if role == 'admin':
+            find_id.role_id = user_statuses['admin']
+        elif role == 'new':
+            find_id.role_id = user_statuses['new']
+        elif role == 'redactor':
+            find_id.role_id = user_statuses['redactor']
+        elif role == 'rejected':
+            find_id.role_id = user_statuses['rejected']
+
+        session_map.commit()
+        flash('Статус пользователя "' + find_id.name + '" изменен на ' + find_id.role.name, 'alert-success')
+        return redirect(url_for('users'))
+
+    else:
+        flash('Статус пользователя ' + find_id.name + ' не изменен', 'alert-warning')
+        return redirect(url_for('users'))
 
 
 if __name__ == "__main__":
