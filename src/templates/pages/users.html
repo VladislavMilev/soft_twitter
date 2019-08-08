@@ -32,8 +32,8 @@
                     <thead>
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">Логин</th>
                         <th scope="col">Имя</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Роль</th>
                         <th scope="col"></th>
                     </tr>
@@ -43,8 +43,8 @@
                             <tbody>
                             <tr>
                                 <th scope="row">{{ user.id }}</th>
-                                <td><a class="text-secondary" href="user/{{ user.id }}">{{ user.login }}</a></td>
                                 <td>{{ user.name }}</td>
+                                <td><a class="text-secondary" href="user/{{ user.id }}">{{ user.login }}</a></td>
                                 <td>
                                     <button type="button" class="btn btn-light btn-sm dropdown-toggle"
                                             data-toggle="dropdown"
@@ -60,7 +60,7 @@
                                 </td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a class="btn btn-light" href="/user/view/{{ user.id }}" role="button"><i
+                                        <a class="btn btn-light" href="/user/{{ user.id }}" role="button"><i
                                                 class="fas fa-eye"></i></a>
                                         <button type="button" class="btn btn-light btn-sm dropdown"
                                                 data-toggle="dropdown"
@@ -113,7 +113,7 @@
                             </td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a class="btn btn-light" href="/user/view/{{ user.id }}" role="button"><i
+                                    <a class="btn btn-light" href="/user/{{ user.id }}" role="button"><i
                                             class="fas fa-eye"></i></a>
                                     <button type="button" class="btn btn-light btn-sm dropdown"
                                             data-toggle="dropdown"
@@ -166,7 +166,7 @@
                                 </td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a class="btn btn-light" href="/user/view/{{ user.id }}" role="button"><i
+                                        <a class="btn btn-light" href="/user/{{ user.id }}" role="button"><i
                                                 class="fas fa-eye"></i></a>
                                         <button type="button" class="btn btn-light btn-sm dropdown"
                                                 data-toggle="dropdown"
