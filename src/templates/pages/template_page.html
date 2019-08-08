@@ -49,13 +49,13 @@
         {% if session.get('role') != 'admin' %}
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="dropdown-item" href="/"><i class="fas fa-home"></i>&nbsp<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/"><i class="fas fa-home"></i>&nbsp<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="dropdown-item" href="/posts"><i class="fas fa-paper-plane"></i>&nbsp;</a>
+                <a class="nav-link" href="/posts"><i class="fas fa-paper-plane"></i>&nbsp;</a>
             </li>
             <li class="nav-item">
-                <a class="dropdown-item" href="/settings"><i class="fas fa-user-cog"></i>&nbsp;</a>
+                <a class="nav-link" href="/settings"><i class="fas fa-user-cog"></i>&nbsp;</a>
             </li>
         </ul>
         {% endif %}
