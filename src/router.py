@@ -330,5 +330,27 @@ def user(id):
                                )
 
 
+@app.route('/user-edit', methods=['GET', 'POST'])
+def user_edit():
+    title = 'Выйти'
+    link = '/sign_out'
+
+    if request.method == 'POST':
+        image = request.files['image']
+        token = 'WebKitFormBoundaryjKbhzxJawAgnCDuK'
+        params = 'https://api.imgbb.com/1/upload?key=' + token
+
+        return redirect(params, 200)
+    else:
+        return render_template('pages/user-edit.html',
+                               title=title,
+                               link=link,
+                               )
+
+
+# @app.route('/edit', methods=['POST'])
+# def edit()
+
+
 if __name__ == "__main__":
     app.run(debug=True)
