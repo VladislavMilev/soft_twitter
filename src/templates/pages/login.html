@@ -8,6 +8,9 @@
 {% block body %}
 
 <div class="container" style="width: 40%; margin-top: 7%">
+    <div class="text-center">
+        <img class="mb-4 text-center" src="{{ url_for('static', filename='img/favicon.png') }}" alt="" width="72" height="72">
+    </div>
     <h3>Вход</h3>
     <form action="/check_login" method="post">
         <label for="login">Email</label>
@@ -32,6 +35,7 @@
                 <button class="btn btn-primary" type="submit" id="button-addon2">Войти</button>
             </div>
         </div>
+        <p class="mt-5 mb-3 text-center text-muted">© 2017-2019</p>
     </form>
 
 </div>

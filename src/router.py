@@ -266,13 +266,21 @@ def users():
         title = 'Выйти'
         link = '/sign_out'
 
+        status_color = {
+            'admin': 'dark',
+            'redactor': 'success',
+            'rejected': 'danger',
+            'new': 'primary',
+        }
+
         get_all_users = session_map.query(User).all()
         get_all_roles = session_map.query(Role).all()
         return render_template('pages/users.html',
                                get_all_users=get_all_users,
                                get_all_roles=get_all_roles,
                                title=title,
-                               link=link
+                               link=link,
+                               status_color=status_color
                                )
     else:
         return redirect(url_for('login'))

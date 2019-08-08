@@ -1,17 +1,90 @@
 {% extends "pages/template_page.html" %}
 
 {% block head %}
-    <title>Jposter | {{ session.get('user_name') + ' - ' + session.get('role') }} | user page</title>
+<title>Jposter | {{ session.get('user_name') + ' - ' + session.get('role') }} | user page</title>
 {% endblock %}
 
 
 {% block body %}
 
-    <h4>{{ user.id }}</h4>
-    <h4>{{ user.name }}</h4>
-    <h4>{{ user.login }}</h4>
-    <h4>{{ user.role_id }}</h4>
-    <h4>{{ user.role.name }}</h4>
-    <h4>{{ mc }}</h4>
 
-{% endblock %}
+<div class="container" style="margin-top:5%">
+
+
+    <div class="row">
+        <!--        Первая колонка          -->
+        <div class="col-sm text-center">
+            <!--            <div class="card" style="width: 18rem">-->
+            <img src="https://scontent.fnlv2-1.fna.fbcdn.net/v/t1.0-1/p240x240/62261343_2132681570188029_6440277596058943488_n.jpg?_nc_cat=105&_nc_oc=AQnsIksqVzyBB_A98E9suB3-gKPKZBsdRLXdKFvsTgduImuS5L3m5UuGmfLG2l8Q0S0&_nc_ht=scontent.fnlv2-1.fna&oh=76e95ffc744a9b493adca67e2c78b15f&oe=5DCFA974"
+                 class="bd-placeholder-img mr-2 card-img-top" alt="avatar"
+                 style="border-radius: 300px; width:250px; height:250px; border:2px solid #e0a800">
+            <div class="card-body">
+                <h5 class="card-title">{{ user.name }} - {{ user.login }}</h5>
+
+                {% if user.role.name == 'admin' %}
+                <h3><span class="badge badge-dark">{{ user.role.name }}</span></h3>
+                {% endif %}
+                {% if user.role.name == 'redactor' %}
+                <h3><span class="badge badge-success">{{ user.role.name }}</span></h3>
+                <p class="text-muted">разрешены публикации</p>
+
+                {% endif %}
+                {% if user.role.name == 'rejected' %}
+                <h3><span class="badge badge-danger">{{ user.role.name }}</span></h3>
+                <p class="text-muted">заблокирован</p>
+
+                {% endif %}
+                {% if user.role.name == 'new' %}
+                <h3><span class="badge badge-primary">{{ user.role.name }}</span></h3>
+                <p class="text-muted">ожидает подтверждения</p>
+                {% endif %}
+
+
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.
+                </p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="fab fa-facebook"></i>&nbsp;<a href="https://www.facebook.com/vladyslav.miliev"><b>vladyslav.miliev</b></a></li>
+                    <li class="list-group-item"><i class="fab fa-github"></i>&nbsp;<a href="https://github.com/VladislavMilev"><b>VladislavMilev</b></a></li>
+                    <li class="list-group-item"><i class="fas fa-globe-americas"></i></i>&nbsp;<a href="https://dev-crud-flask.herokuapp.com"><b>JPoster</b></a></li>
+                </ul>
+                <br>
+                <a href="#" class="btn btn-warning">Редактировать</a>
+            </div>
+            <!--            </div>-->
+        </div>
+        <!--        Вторая колонка          -->
+        <div class="col-sm">
+
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        ID: <b>{{ user.id }}</b>
+                    </li>
+                    <li class="list-group-item">
+                        Имя: <b>{{ user.name }}</b>
+                    </li>
+                    <li class="list-group-item">
+                        Email: <b>{{ user.login }}</b>
+                    </li>
+                    <li class="list-group-item">
+                        Роль в системе: <b>{{ user.role.name }}</b>
+                    </li>
+                    <li class="list-group-item">
+                        Кол-во постов: <b>{{ mc }}</b>
+                    </li>
+                </ul>
+                <br>
+
+            </div>
+
+        </div>
+        <div class="col-sm">
+            <!--            Пустая колонка              -->
+        </div>
+
+
+    </div>
+
+    {% endblock %}
