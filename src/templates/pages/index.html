@@ -12,7 +12,7 @@
     <br>
     <div class="card cardstyle bg-light">
         <div style="width:20%">
-            <img id="card_avatar" src="https://randomuser.me/api/portraits/men/24.jpg" alt="Card image cap">
+            <img id="card_avatar" src="{{ message.user.user_image }}" alt="Card image cap">
         </div>
         <div class="card-body">
             <h2 class="card-text"><a href="/user/{{ message.user.id }}">{{ message.user.name }}</a>&nbsp;написал(а)

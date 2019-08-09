@@ -96,7 +96,7 @@
                     {% if message.user_id == session.get('user_id') and session.get('role') != 'admin' %}
                         <div class="card cardstyle {{ message.color }}">
                             <div style="width:20%">
-                                <img id="card_avatar" src="https://randomuser.me/api/portraits/men/56.jpg"
+                                <img id="card_avatar" src="{{ message.user.user_image }}"
                                      alt="Card image cap">
                             </div>
                             <div class="card-body">
@@ -122,7 +122,7 @@
                     {% if session.get('role') == 'admin' %}
                         <div class="card cardstyle {{ message.color }}">
                             <div style="width:20%">
-                                <img id="card_avatar" src="https://randomuser.me/api/portraits/men/81.jpg"
+                                <img id="card_avatar" src="{{ message.user.user_image }}"
                                      alt="Card image cap">
                             </div>
                             <div class="card-body">
@@ -163,7 +163,7 @@
                     {% if message.user_id == session.get('user_id') and session.get('role') != 'admin' %}
                         <div class="card cardstyle {{ message.color }}">
                             <div style="width:20%">
-                                <img id="card_avatar" src="https://randomuser.me/api/portraits/men/12.jpg"
+                                <img id="card_avatar" src="{{ message.user.user_image }}"
                                      alt="Card image cap">
                             </div>
                             <div class="card-body">
@@ -192,7 +192,7 @@
                     {% if session.get('role') == 'admin' and message.status == 2 %}
                         <div class="card cardstyle {{ message.color }}">
                             <div style="width:20%">
-                                <img id="card_avatar" src="https://randomuser.me/api/portraits/men/81.jpg"
+                                <img id="card_avatar" src="{{ message.user.user_image }}"
                                      alt="Card image cap">
                             </div>
                             <div class="card-body">
