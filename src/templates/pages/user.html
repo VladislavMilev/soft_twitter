@@ -15,7 +15,7 @@
         <!--        Первая колонка          -->
         <div class="col-sm text-center">
             <!--            <div class="card" style="width: 18rem">-->
-            <img src="https://scontent.fnlv2-1.fna.fbcdn.net/v/t1.0-1/p240x240/62261343_2132681570188029_6440277596058943488_n.jpg?_nc_cat=105&_nc_oc=AQnsIksqVzyBB_A98E9suB3-gKPKZBsdRLXdKFvsTgduImuS5L3m5UuGmfLG2l8Q0S0&_nc_ht=scontent.fnlv2-1.fna&oh=76e95ffc744a9b493adca67e2c78b15f&oe=5DCFA974"
+            <img src="{{ user.user_image }}"
                  class="bd-placeholder-img mr-2 card-img-top" alt="avatar"
                  style="border-radius: 300px; width:250px; height:250px; border:2px solid #e0a800">
             <div class="card-body">
@@ -50,7 +50,7 @@
                     <li class="list-group-item"><i class="fas fa-globe-americas"></i></i>&nbsp;<a href="https://dev-crud-flask.herokuapp.com"><b>JPoster</b></a></li>
                 </ul>
                 <br>
-                <a href="#" class="btn btn-warning">Редактировать</a>
+                <a href="/user/edit/{{ user.id }}" class="btn btn-warning">Редактировать</a>
             </div>
             <!--            </div>-->
         </div>

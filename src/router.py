@@ -1,9 +1,11 @@
 import datetime
 
-from flask import Flask, request, render_template, url_for, redirect, flash, session, jsonify
+import requests
+from flask import Flask, request, render_template, url_for, redirect, flash, session
 
 from src.DAO.connection import SESSION
 from src.DAO.entity import User, Message, Tag, Role
+import base64
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -263,25 +265,28 @@ def sign_out():
 @app.route('/users', methods=['GET'])
 def users():
     if 'user_id' in session:
-        title = 'Выйти'
-        link = '/sign_out'
+        if session.get('role') == 'admin':
+            title = 'Выйти'
+            link = '/sign_out'
 
-        status_color = {
-            'admin': 'dark',
-            'redactor': 'success',
-            'rejected': 'danger',
-            'new': 'primary',
-        }
+            status_color = {
+                'admin': 'dark',
+                'redactor': 'success',
+                'rejected': 'danger',
+                'new': 'primary',
+            }
 
-        get_all_users = session_map.query(User).all()
-        get_all_roles = session_map.query(Role).all()
-        return render_template('pages/users.html',
-                               get_all_users=get_all_users,
-                               get_all_roles=get_all_roles,
-                               title=title,
-                               link=link,
-                               status_color=status_color
-                               )
+            get_all_users = session_map.query(User).all()
+            get_all_roles = session_map.query(Role).all()
+            return render_template('pages/users.html',
+                                   get_all_users=get_all_users,
+                                   get_all_roles=get_all_roles,
+                                   title=title,
+                                   link=link,
+                                   status_color=status_color
+                                   )
+        else:
+            return redirect(url_for('index'))
     else:
         return redirect(url_for('login'))
 
@@ -311,7 +316,7 @@ def set_role(role, id):
 
 @app.route('/user/<int:id>')
 def user(id):
-    if session.get('role') == 'admin' or session.get('id') == id:
+    if session.get('role') == 'admin' or session.get('user_id') == id:
         title = 'Выйти'
         link = '/sign_out'
 
@@ -328,28 +333,81 @@ def user(id):
                                title=title,
                                link=link,
                                )
+    else:
+        flash('Отказано в доступе', 'alert-warning')
+        return redirect(url_for('index'))
 
 
-@app.route('/user-edit', methods=['GET', 'POST'])
-def user_edit():
+@app.route('/user/edit/<int:id>', methods=['GET'])
+def user_edit(id):
     title = 'Выйти'
     link = '/sign_out'
 
-    if request.method == 'POST':
-        image = request.files['image']
-        token = 'WebKitFormBoundaryjKbhzxJawAgnCDuK'
-        params = 'https://api.imgbb.com/1/upload?key=' + token
+    user = session_map.query(User).filter_by(id=id).first()
 
-        return redirect(params, 200)
-    else:
+    if user:
         return render_template('pages/user-edit.html',
+                               user=user,
                                title=title,
-                               link=link,
+                               link=link
                                )
+    else:
+        flash('Отказано в доступе', 'alert-warning')
+        return redirect(url_for('index'))
 
 
-# @app.route('/edit', methods=['POST'])
-# def edit()
+@app.route('/user_image_upload/<int:id>', methods=['POST'])
+def user_image_uploads(id):
+    image = request.files['image']
+    token = 'WebKitFormBoundaryjKbhzxJawAgnCDuK'
+
+    image_string = base64.b64encode(image.read()).decode("utf-8")
+
+    res = requests.post('https://api.imgbb.com/1/upload?key=' + token, {
+        'image': image_string
+    })
+    data = res.json()
+    get_image = data['data']['url']
+    return render_template('pages/user-edit.html',
+                           res=res,
+                           image_string=image_string,
+                           get_image=get_image
+                           )
+
+
+@app.route('/user/update/<int:id>', methods=['GET', 'POST'])
+def user_update(id):
+    title = 'Выйти'
+    link = '/sign_out'
+
+    find_user_id = session_map.query(User).filter_by(id=id).first()
+
+    if request.method == 'POST':
+        user_name = request.form['name']
+        user_login = request.form['login']
+        image = request.files['image']
+
+        token = 'WebKitFormBoundaryjKbhzxJawAgnCDuK'
+
+        image_string = base64.b64encode(image.read()).decode("utf-8")
+
+        res = requests.post('https://api.imgbb.com/1/upload?key=' + token, {
+            'image': image_string
+        })
+        data = res.json()
+        get_image = data['data']['url']
+
+        find_user_id.name = user_name
+        find_user_id.login = user_login
+        find_user_id.user_image = get_image
+
+        session_map.commit()
+        flash('Данные обновлены', 'alert-success')
+        return redirect(url_for('users'))
+
+    else:
+        flash('Отказано в доступе', 'alert-warning')
+        return redirect(url_for('users'))
 
 
 if __name__ == "__main__":

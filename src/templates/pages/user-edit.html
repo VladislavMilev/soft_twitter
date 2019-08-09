@@ -7,13 +7,99 @@
 
 {% block body %}
 
+<div class="container">
+    <div class="row">
+        <!--        Первая колонка          -->
+        <div class="col-sm text-center">
+            <!--            <div class="card" style="width: 18rem">-->
+            <img src="{{ user.user_image }}"
+                 class="bd-placeholder-img mr-2 card-img-top" alt="avatar"
+                 style="border-radius: 300px; width:250px; height:250px; border:2px solid #e0a800">
+            <div class="card-body">
+                <h5 class="card-title">{{ user.name }} - {{ user.login }}</h5>
 
-<form action="/user-edit" method="post" enctype=multipart/form-data>
-    <input type=file name="image">
-    <input type="submit" value="GO">
-</form>
+                {% if user.role.name == 'admin' %}
+                <h3><span class="badge badge-dark">{{ user.role.name }}</span></h3>
+                {% endif %}
+                {% if user.role.name == 'redactor' %}
+                <h3><span class="badge badge-success">{{ user.role.name }}</span></h3>
+                <p class="text-muted">разрешены публикации</p>
 
-{{image}}<img src="{{image}}" alt="">
+                {% endif %}
+                {% if user.role.name == 'rejected' %}
+                <h3><span class="badge badge-danger">{{ user.role.name }}</span></h3>
+                <p class="text-muted">заблокирован</p>
+
+                {% endif %}
+                {% if user.role.name == 'new' %}
+                <h3><span class="badge badge-primary">{{ user.role.name }}</span></h3>
+                <p class="text-muted">ожидает подтверждения</p>
+                {% endif %}
 
 
-{% endblock %}
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.
+                </p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="fab fa-facebook"></i>&nbsp;<a
+                            href="https://www.facebook.com/vladyslav.miliev"><b>vladyslav.miliev</b></a></li>
+                    <li class="list-group-item"><i class="fab fa-github"></i>&nbsp;<a
+                            href="https://github.com/VladislavMilev"><b>VladislavMilev</b></a></li>
+                    <li class="list-group-item"><i class="fas fa-globe-americas"></i></i>&nbsp;<a
+                            href="https://dev-crud-flask.herokuapp.com"><b>JPoster</b></a></li>
+                </ul>
+                <br>
+            </div>
+            <!--            </div>-->
+        </div>
+        <!--        Вторая колонка          -->
+        <div class="col-sm">
+            <form action="/user/update/{{ user.id }}" method="post" enctype=multipart/form-data>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            ID: <b>{{ user.id }}</b>
+                        </li>
+                        <li class="list-group-item">
+                            <label for="name">Имя:</label>
+                            <input type="text" name="name" class="form-control" required="true" value="{{ user.name }}">
+                        </li>
+                        <li class="list-group-item">
+                            <label for="login">Email:</label>
+                            <input type="email" name="login" class="form-control" required="true"
+                                   value="{{ user.login }}">
+                        </li>
+                        <li class="list-group-item">
+                            Роль в системе: <b>{{ user.role.name }}</b>
+                        </li>
+                        <li class="list-group-item">
+                            Кол-во постов: <b>{{ mc }}</b>
+                        </li>
+                    </ul>
+                    <br>
+                    <label for="image">Фото:</label>
+
+                    <div class="input-group mb-3">
+                        <!--                        <div class="input-group-prepend">-->
+                        <!--                            <span class="input-group-text" id="inputGroupFileAddon01">Фото:</span>-->
+                        <!--                        </div>-->
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="image"
+                                   aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary" value="Обновить">
+                </div>
+            </form>
+        </div>
+        <div class="col-sm">
+            <!--            Пустая колонка              -->
+        </div>
+    </div>
+
+    {% endblock %}
+
+

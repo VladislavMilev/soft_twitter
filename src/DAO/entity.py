@@ -17,14 +17,16 @@ class User(BASE):
     name = Column(String(40), nullable=False)
     login = Column(String(40), unique=True, nullable=False)
     password = Column(String(40), nullable=False)
+    user_image = Column(Text(1024), default='https://avatars.servers.getgo.com/2205256774854474505_medium.jpg')
 
     role_id = Column(Integer, ForeignKey('role.id'), nullable=False, default=2)
     role = relationship('Role', backref=backref('user', lazy=True))
 
-    def __init__(self, name, login, password):
+    def __init__(self, name, login, password, user_image=user_image):
         self.name = name
         self.login = login
         self.password = password
+        self.user_image=user_image
 
 
 class Role(BASE):
@@ -66,14 +68,14 @@ class Tag(BASE):
 
 
 # BASE.metadata.create_all(ENGINE)
-
-
+#
+#
 # roles = {1: 'admin',
 #          2: 'new',
 #          3: 'redactor',
 #          4: 'rejected'
 #          }
-
+#
 # for item in roles.keys():
 #     id = item
 #     name = roles[item]
@@ -82,16 +84,16 @@ class Tag(BASE):
 #
 #     session_map.add(set_all_roles)
 #
-# user_admin = User('Vlad', 'admin', 'admin', 1)
-# user_user = User('Nina', 'user', 'user', 2)
+# user_admin = User('Vlad', 'role@admin.com', 'admin')
+# user_user = User('Bonya', 'role@user.com', 'user')
 #
 # session_map.add(user_admin)
 # session_map.add(user_user)
 #
 # session_map.flush()
 # session_map.commit()
-#
-#
+
+
 # message_statuses = ('inreview',
 #                     'aproved',
 #                     'rejected'
