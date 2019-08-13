@@ -1,8 +1,10 @@
 import datetime
+import json
+import os
+import random
 
 import requests
-from flask import Flask, request, render_template, url_for, redirect, flash, session
-
+from flask import Flask, request, render_template, url_for, redirect, flash, session, send_file, Blueprint
 from src.DAO.connection import SESSION
 from src.DAO.entity import User, Message, Tag, Role
 import base64
@@ -25,6 +27,12 @@ user_statuses = {
     'redactor': 3,
     'rejected': 4,
 }
+
+FILE_FOLDER = 'files/'
+rnd = 'qwertyuiopasdfghjklzxcvbnm1234567890'
+ls = list(rnd)
+
+file_name = ''.join([random.choice(ls) for x in range(12)])
 
 
 @app.route('/', methods=['GET'])
@@ -246,9 +254,25 @@ def check_register():
             flash('Юзер с таким логином уже существует', 'alert-warning')
             return redirect(url_for('register'))
         else:
+            token = ''.join([random.choice(ls) for x in range(29)])
+
             user = User(name, user_login, password_one)
-            session_map.add(user)
-            session_map.commit()
+            # session_map.add(user)
+            # session_map.commit()
+
+            user = {
+                'name': name,
+                'login': user_login,
+                'token': token
+            }
+
+            file_create = open(FILE_FOLDER + str(file_name), 'w')
+            file_create.write(json.dumps(user))
+            file_create.close()
+
+            # file_read = open(FILE_FOLDER + str(file_name), 'r')
+            # f = json.loads(file_read.read())
+
             flash('Пользователь ' + user_login + ' успешно зарегистрирован', 'alert-success')
             return redirect(url_for('login'))
 
@@ -408,6 +432,67 @@ def user_update(id):
     else:
         flash('Отказано в доступе', 'alert-warning')
         return redirect(url_for('users'))
+
+
+#
+# GENERATE USER-KEY
+#
+
+@app.route('/create', methods=['GET', 'POST'])
+def create():
+    return render_template('pages/create.html')
+
+
+@app.route('/createfile', methods=['GET', 'POST'])
+def createfile():
+    token = ''.join([random.choice(ls) for x in range(29)])
+
+    name = request.form['name']
+    surname = request.form['surname']
+
+    user = {
+        'name': name,
+        'surname': surname,
+        'token': token
+    }
+
+    file_create = open(FILE_FOLDER + str(file_name), 'w')
+    file_create.write(json.dumps(user))
+    file_create.close()
+
+    file_read = open(FILE_FOLDER + str(file_name), 'r')
+    f = json.loads(file_read.read())
+
+    return render_template('pages/create.html')
+
+
+@app.route('/getfile')
+def getfile():
+    return send_file(FILE_FOLDER + file_name, attachment_filename=file_name)
+
+
+def remove():
+    scan = os.scandir(FILE_FOLDER)
+    file_name = list(scan)
+
+    for item in file_name:
+        os.remove(item)
+    return redirect(url_for('index'))
+
+
+@app.route('/key')
+def key():
+    title = 'Выйти'
+    link = '/sign_out'
+    return render_template('pages/key.html',
+                           title=title,
+                           link=link
+                           )
+
+
+@app.route('/get-key')
+def get_key():
+    pass
 
 
 if __name__ == "__main__":
