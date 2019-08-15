@@ -34,7 +34,7 @@ def check_login():
             return redirect(url_for('index'))
         else:
             flash('Неверно введены логин или пароль', 'alert-warning')
-            return redirect(url_for('login'))
+            return redirect(url_for('auth_api.login'))
 
 
 @auth_api.route('/register/', methods=['GET'])
