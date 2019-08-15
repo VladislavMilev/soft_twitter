@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Text, DateTime, Boolean
 from datetime import datetime
 from sqlalchemy.orm import relationship, backref
-from src.DAO.connection import BASE, ENGINE, SESSION
+from src.DAO.connection import BASE, SESSION
 
 session_map = SESSION()
 
@@ -22,11 +22,10 @@ class User(BASE):
     role_id = Column(Integer, ForeignKey('role.id'), nullable=False, default=2)
     role = relationship('Role', backref=backref('user', lazy=True))
 
-    def __init__(self, name, login, password, user_image=user_image):
+    def __init__(self, name, login, password):
         self.name = name
         self.login = login
         self.password = password
-        self.user_image=user_image
 
 
 class Role(BASE):

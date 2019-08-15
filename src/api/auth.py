@@ -9,7 +9,7 @@ auth_api = Blueprint('auth_api', __name__)
 def login():
     if 'user_id' in session:
         user_id = format(session.get('user_id'))
-        return redirect(url_for('auth_api.index', user_id=user_id))
+        return redirect(url_for('index', user_id=user_id))
     else:
         title = 'Регистрация'
         link = '/register'
