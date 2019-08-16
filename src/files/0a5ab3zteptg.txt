@@ -1,1 +1,0 @@
-{"name": "Kozel", "login": "role@kozel.com", "token": "te1jrmsm0ne1e36t2fwanlierj78y"}

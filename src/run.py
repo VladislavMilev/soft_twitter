@@ -2,7 +2,7 @@ import json
 import os
 import random
 
-from flask import Flask, render_template, url_for, redirect, session, send_file, request
+from flask import Flask, render_template, url_for, redirect, session, send_file
 import datetime
 from src.DAO.connection import SESSION
 from src.DAO.entity import Message
@@ -19,9 +19,7 @@ app.register_blueprint(user_api)
 app.register_blueprint(message_api)
 app.register_blueprint(auth_api)
 
-
 session_map = SESSION()
-
 
 message_statuses = {
     'inreview': 0,
@@ -36,8 +34,7 @@ user_statuses = {
     'rejected': 4,
 }
 
-
-FILE_FOLDER = 'src/files/'
+FILE_FOLDER = 'files/'
 rnd = 'qwertyuiopasdfghjklzxcvbnm1234567890'
 ls = list(rnd)
 
@@ -55,7 +52,6 @@ def index():
         return render_template('pages/index.html', messages=messages, title=title, link=link)
     else:
         return redirect(url_for('auth_api.login'))
-
 
 
 #
@@ -80,7 +76,7 @@ def createfile():
         'token': token
     }
 
-    file_create = open(FILE_FOLDER + str(file_name + '.txt'), 'w')
+    file_create = open(FILE_FOLDER + str(file_name), 'w')
     file_create.write(json.dumps(user))
     file_create.close()
 
@@ -88,12 +84,8 @@ def createfile():
     # f = json.loads(file_read.read())
 
     # return render_template('pages/create.html')
-    return send_file('files/' + file_name + '.txt', attachment_filename=file_name)
+    return send_file('files/' + file_name, attachment_filename=file_name)
 
-
-@app.route('/getfile')
-def getfile():
-    return send_file(FILE_FOLDER + file_name, attachment_filename=file_name)
 
 
 def remove():
@@ -115,9 +107,6 @@ def key():
                            )
 
 
-@app.route('/get-key')
-def get_key():
-    pass
 
 
 if __name__ == "__main__":

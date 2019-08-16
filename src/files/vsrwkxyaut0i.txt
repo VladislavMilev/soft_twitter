@@ -1,1 +1,0 @@
-{"name": "VITLIX", "login": "role@vitlix.com", "token": "v7wwhvoahzy30222jdvhxt908fcau"}
