@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 
 # ENGINE = create_engine('mysql+mysqlconnector://root:dofemu37@localhost/mini')
 
-ENGINE = create_engine('mysql+mysqlconnector://WWdjuKmKqj:WURoMWCIXz@remotemysql.com/WWdjuKmKqj')
+ENGINE = create_engine('mysql+mysqlconnector://44P2xsNIuE:FFFcC1Rc6S@remotemysql.com/44P2xsNIuE')
 SESSION = sessionmaker(bind=ENGINE)
 SESSION_SCOPE = scoped_session(SESSION)
 BASE = declarative_base()
